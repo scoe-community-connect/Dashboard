@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Connect</title>
+<meta name="description" content="Put the Community Connect dashboard on your computer with one click.">
+<meta name="theme-color" content="#003047">
+<link rel="manifest" id="manifest">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAflBMVEVMaXEAMEgALkcAMEcAMEUALkUAMUoAL0YAL0YAMEYAL0cAMEf////yZyIEM0rr7/FRQjqBTTN6k58uVmkTP1U4XnAJN0319/gCMEYcR1vZ4OSInqnAzNJnhJEOPFGUqLI7PT3O2NxTc4OnuMC2xMtEZ3j7/P1Mbn5sSTZWdoVYuDUwAAAAC3RSTlMAVVLPVBYU8oPO0LrEmRkAAAAJcEhZcwAACxMAAAsTAQCanBgAAAErSURBVHjahZOJdoMgEEVpolE7r9CiaNy3mOX/f7BgNNFq9R3PcRwuOAvDGGO2e3RoIcdzbdbrY2V1YKx+nTakCdvZApwTc2lTLvvcBjzmbAMOox29AF+W8sZ7k3dpKdUcCC4wSnyDJr19CSZAWANREgEiJl/oV3IFMv4GUv0ZUChRhpQBKaegjfL3CVxAFH0g+tFsf2g8iUE72zHYHMgXWSigHB0SaBZArGMeHQ9ALutQ42oS5LKgIIIIzaacT4CbzuwRqwxCmYxqFTcJ6mBSqBRPJQWF2WC3s1LnujyISrMpTHXFICSf94KrpisGu+gaxf82a7ebROf7z6D7eRWovl6qVgGqvgdV01/sXrnj3qXdvfa7g8OsLeBghtP6f3gPz/E+ud76+Ovz2S+OizIWAx13QgAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Community Connect">
+<script>
+/* ============================================================================================
+   THE ONE LINE TO CHANGE: the dashboard's link, the web app address that ends in /exec
+   (in the dashboard's Apps Script project: Deploy > Manage deployments). Paste it between the quotes.
+   ============================================================================================ */
+var DASHBOARD = 'PASTE THE DASHBOARD LINK HERE';
+</script>
+<script>
+/* Opened from the installed icon, a home-screen icon or a bookmark (?go=1): go straight to the dashboard, saying so
+   (app=1), so the dashboard stops offering to put itself on this computer. */
+function withApp(u) { return u + (u.indexOf('?') === -1 ? '?' : '&') + 'app=1'; }
+/* What lets the browser offer Install (its "manifest"), made here so this page is a single file: the icon opens this
+   page with ?go=1, which goes straight to the dashboard. */
+(function () {
+  var here = location.href.split('#')[0].split('?')[0];
+  var png = function (b, size, purpose) { return { src: 'data:image/png;base64,' + b, sizes: size + 'x' + size, type: 'image/png', purpose: purpose }; };
+  var m = {
+    name: 'Community Connect', short_name: 'Community Connect', description: 'The Community Connect dashboard',
+    start_url: here + '?go=1', scope: here.replace(/[^\/]*$/, ''), display: 'standalone',
+    background_color: '#003047', theme_color: '#003047',
+    icons: [png('iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAgVBMVEVMaXEAMUcAL0YAL0YAMEcAL0YAL0YAL0YAL0YAL0YAL0cAMEf////yZyIJNUkQPVOzwsj19/iktb1aeYjU3OBohJIcR1uInqng5ulHans4XW/7/Pzr7/EnUGTJ1Ni/y9EgOEN1j5uarbaAmKOMoqyUqLKRpq9ySjXxZyI7PT7mZCQSuIBlAAAAC3RSTlMAC6ttHFXbmsPwK7/r5MEAAAAJcEhZcwAACxMAAAsTAQCanBgAAAkISURBVHja7V3pgqI4ELZVRBon3PfhAmp3z/s/4BJIOAKEQIuSXerPTKuB+kgdIfUl2e3G5CgcxPPpJMkvFel0OosH4bj7nRwF8SS/VU7ifBAfwl5ehZwPHzPU/xQleTUiiZ+T1ZdXJvspEI57eYWyZ3aGgySvUqQD2+M/y6uVM0MnCJK8YpGEMf1FeeUi0kP/Xl697ClJ4eMscyDnD771H0bAi/6DCPYyN7LnMv6MxCJB5ko6+eAo8QVAInPyWeZMzsT4TeZODjwbUMeI9jKH0ohEnzKX8sl3BzTSGacdUHeByCsA5AUfEq8ApA9ec0B7QHHmF0CRjo8yx3LkbxjatSGRZwAwDp14BnDi3AWgEwh8AxB4zgLlW4HINwCR5zRWprIT3wBO/AOQ+AYg7QDfAMBO5lw2ALKs2FFkK7P6f37T5wAAXqaa2qWU8Hq3InbU3k11A9TUVR3DfjkAYKhY91rMjAWDYsUB2TK4JvYrAShZeOkX1R9paqdaf8sgtV8FACRD6hcQaL2gPLThlkGqvARAFF+ooiWDTT2X3jT0XgAgCS5jovY/SaCPtrw8lgbAokTuzX3mbMcsTVWwKACFSYk8NHYRRC5b0ytYEACr/nkfKDP1z/tgOQDgemEWwhRsl72psxiA9DJBkrnQLxdvIQDWQOzrD+2aPQ497I9oJlgEQNRV1L15UE1gG47Z+TJtxP+uknHiQzdRIuPetS5jEQAdKzBb9/GJANtIq4pLH3F47Utr1iImZJCJPyM72jcHcqpDWlfnCRuNwUkcLeLEgHiKWo+nAbU3F9uE7bk9GtoYfOAslAcIDw48SpwlbOBOeG7vqBPFWdeXF8rEhJMOmKkSdm1AaXdAMKCiH7Qd58kAfCLfD3dUkJGjv3bT23CWCQ1ZXgpAO5AHg34Gum807eGHO/iMI9Ve8IUmHArxo2Iz2d7S78SEBfmz87emvAdA247NKfdo5zf9TfNCakuLbMo93JnjtOcCmK+F0vZ+5T0AQDBbC3++8T0RgD1fC2NJF2AGELFlsfEg5LwJgD/7pZUAkKwCgD4fgLX1wDN8IJ7vxO/yATA/CvmzB1FPTWStsVwAZo/l4ncBuM4fD2hryMTybf5Y6LqKsZA33xAytvexhQEowez3gTb28E3vA8R4elIqC9fwRka+Vw2/vVqdR9yeVXHBcPUSLAiAmBtRh8N+aNFfR53htz7TW7DI92B7N4dTELFPm5YYmheyoalNnZiYACBqu7HWrwaaBdVtyqyqa9Mm9bLFamTEFH/o0979tQQMz+r1lQDr4qFrLASAnKLtToIrzQmIpj2T5YHuBGir9nyNlqnQJPSaPLCI+n3DnlVyav6utJkLGu3rZwEAnRJloHvYUvwue6Ix/2h3vtQefkV66bInQrBIjaynxnTRYv120699ZTKdUh0pGTrp7aHHwViB8IlVSmNKqVGLZhc4FyrydQaldLFml5gDfzmqgc6sRTq7yD9luDSd7KHPK9RDBCZj02xZtsqd7fn3WLHCZEWBtTRfyBrnCw0UegGDJ7ve8owtf8wWhgu9RjjSVFdewplzNBptjDaWsak+tOhwmlEPd+ytxB+MRrEhv5A3Gj16rCFQPYYU5Os9XqSlvvxi5m4+hmnWbQIzNVgNWDH0sDUccTzwHu604luJ87g5ieFP1cD28qZ3J7O8CGzs9Q3ABmADsAHYAGwANgDgH0YB6wTw9f2HUb6/1gjg588E+VkhgK8pAL7W2APf7Pp//6zSB/6y6v/3a6VhFDDKlgc2ABuADcAGYAOwAfgfALAcKElrw4Qk/6QeCfiZnmZoTtlwnHJy3Mvb1M0dJ/MaU7q3NGvO4toObpVfDP3cQN9n6PbKbADXbtHEDhqsPczOcAtah4rr2jdEK1U79e5EI2tIkLvgykQJGq2SwyUUjb4ujgVATY+xmuVTvUXBogBAKzv1bhXVbNDvDGKZk8a2wpsOILaszGzQ7fPaSoBpDJCMrBqWrpX69AG4GoYBdxDQMXfRzaxbWC8CjODlLvcagGVZKSY25gB0q/g5lehIB6DjJ+dhDq6r4j/gDWHPKCUxqA+Ajv5VEVeneJRwxaFZ8THT/IHUANDvTQTAQuXxwP4VALgIVMcm+7DwH0Z7Te0QAGCWzI2sIq94ldnkX8GCmdcCkP8wbAAoejr5FQBI0zDxDT0brwQr+eyuE1UANBdKWANwdV030fYA18oQ4XKcBHEBXfhQ0haAK6LVYgDwrunvACTomUQFjSfGTpm16FUqSW6vPggjQg0T2f0N7oIRYW4QBJCmaYwfeAVApa5XYAHgoFiXFR9k1fV8NahX1w4DKOmBcR1OQ+SWbmE9LrIhg+DaVACuVJotCwDc+/mTuzqO3lhNaFsqJmdAk1eg3AkfeJRxVq8ivo0CKWST3hy4FF9vAUAbUmAAkK96+xUAD3WqTwT2MqX6KFMNRqGo9FmjygcpCis1D1UDCIBhqBVPCgPI6Iz3UQDA0BDR2IH13FxCHBdduKVRhCL5IIAEKWDClfRAVhycC/PruPB6CFnpxHaILbQEoGQBfcEIHUAQhnXqdFFXWuUqhoJ1oxXbTBkDAMJcPVgKLx54wbcrf18YSRVN41JlFIUwXghAKzes0PxfDiVK7oyPbwiJ+PknNV1AlUeGEiWByce1+dhuBWerdCoEAOaNwos1ti2HRgFoJor0j8oL1dKpo1sxlHEzQAUQql61uVOx3r6MLSDEwOAI0ajzAHa5EkAYJ8rc0WgRU5TWn3h3tep/dsUSqL7G35bNFUBs6QYa1wPN/1VXRVfqab29ka0SAPebRXK/Xee24+u7AXC/aTD32zZzv3E291uXc795PPfb9/N/gAL3R1hwf4gI98e48GxDwn/jKCPuD5Pi/zgv7g9U4/9IO+4PFeT/WEfuD9bk/2hT/g+X5f54X/4PWOb/iGv+Dxnn/ph3XhAM658j4MAP9hT9eYhF4m5EhFVnNEnYjcpxxY5wPu5YZK2dIB12jHJcpSeIxx27fK4Owv5zN00+xRUZkiROVb9ICsJKssL58LGbKUdBfPPs+0kUjrvfyVE4iOfTSXppRRxIp9NZPDAo/y+XB0CJmPgCYwAAAABJRU5ErkJggg==', 192, 'any'), png('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', 512, 'any'), png('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', 512, 'maskable')]
+  };
+  document.getElementById('manifest').href = 'data:application/manifest+json,' + encodeURIComponent(JSON.stringify(m));
+})();
+(function () {
+  var ok = /^https?:\/\/\S+$/.test(DASHBOARD);
+  var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+  var go = /[?&]go(=|&|$)/.test(location.search);
+  window.CC = { ok: ok, going: ok && (go || standalone) ? withApp(DASHBOARD) : '' };
+  /* Opened as the installed app: this browser remembers it's installed, so this page offers to open it, not to add it. */
+  if (standalone) { try { localStorage.setItem('cc-installed', '1'); } catch (x) {} }
+  var ua = navigator.userAgent, uad = navigator.userAgentData, plat = (uad && uad.platform) || navigator.platform || '';
+  var os = (/Android/i.test(ua) || /Android/i.test(plat)) ? 'android'
+    : (/iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(plat) && navigator.maxTouchPoints > 1)) ? 'ios'
+    : (/CrOS/i.test(ua) || /Chrome OS/i.test(plat)) ? 'chromeos' : /Win/i.test(plat) ? 'windows' : /Mac/i.test(plat) ? 'mac' : 'other';
+  document.documentElement.setAttribute('data-os', os);
+  /* A computer opening this page afresh starts on the bookmarks bar steps, from the very first paint (the script at the
+     end of the page fills them in). Phones and tablets have no bookmarks bar. */
+  var fresh = true;
+  try { fresh = localStorage.getItem('cc-bm') !== '1' && localStorage.getItem('cc-installed') !== '1'; } catch (x) {}
+  if (fresh && os !== 'android' && os !== 'ios' && (os !== 'other' || !/Mobi|Tablet|Silk|Kindle/i.test(ua))) document.documentElement.setAttribute('data-shown', 'bar');
+  /* The first time the app opens on a computer: one last step, keeping it on the taskbar (Dock, shelf), shown moving. */
+  var pinned = false;
+  try { pinned = localStorage.getItem('cc-pin-done') === '1'; } catch (x) {}
+  window.CC.pin = ok && standalone && !pinned && (os === 'windows' || os === 'mac' || os === 'chromeos');
+  if (window.CC.pin) { window.CC.going = ''; document.documentElement.className += ' pinning'; }
+  /* The opening screen shows at once; the page leaves for the dashboard as soon as it has painted (below). */
+  if (window.CC.going) document.documentElement.className += ' going';
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- The font loads without holding the page back, so the opening screen shows at once. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;800&display=swap"></noscript>
+<style>
+:root{--navy:#003047;--navy2:#0B4A6B;--orange:#F26722;--blue:#1467AD;--ink:#1A2430;--ink2:#4B5866;--line:#E5E7EB;--line2:#CFD6DD;
+  --page:#F5F7F9;--card:#FFFFFF;--okbg:#EDF7EF;--oktext:#157A33;--warnbg:#FFF1EA;--warntext:#B84A12}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;display:flex;flex-direction:column;background:var(--page);color:var(--ink);
+  font:500 16px/1.55 Raleway,"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+.band{height:8px;background:var(--navy)}
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 16px}
+.card{width:100%;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 1px 2px rgba(16,24,40,.04),0 10px 28px rgba(16,24,40,.07);padding:32px 28px 28px;text-align:center}
+.appicon{display:block;width:88px;height:88px;margin:0 auto 18px;border-radius:20px}
+h1{margin:0 0 10px;color:var(--navy);font-size:26px;line-height:1.25;font-weight:800;letter-spacing:-.01em;text-wrap:balance}
+.lead{max-width:40ch;margin:0 auto 24px;color:var(--ink2);text-wrap:pretty}
+[data-shown="open"] h1{margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:340px;min-height:56px;padding:0 28px;
+  border:0;border-radius:12px;background:var(--navy);color:#fff;font:inherit;font-size:18px;font-weight:800;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--navy2)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.small{margin:12px 0 0;color:var(--ink2);font-size:14px}
+.steps{max-width:36ch;margin:0 auto;padding-left:1.4em;text-align:left}
+.steps li{margin:0 0 10px;padding-left:4px}
+.say{max-width:40ch;margin:0 auto 14px}
+kbd{padding:1px 7px;border:1px solid var(--line2);border-bottom-width:2px;border-radius:6px;background:#fff;font:inherit;font-size:.92em;font-weight:700}
+.ok{display:inline-block;margin:0 0 12px;padding:6px 16px;border-radius:999px;background:var(--okbg);color:var(--oktext);font-weight:800}
+.alt{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin:22px 0 0;font-size:15px}
+.alt a{color:var(--blue);font-weight:700}
+/* A computer's first choice: the bookmarks bar. The picture beside three steps; stacked in a narrow window. */
+[data-state="bar"]{display:none}
+[data-shown="bar"] [data-state="bar"]{display:block}
+[data-shown="bar"] [data-state="ready"],[data-shown="bar"] #lead{display:none}
+[data-shown="bar"] .card{max-width:920px;padding:28px 32px 24px}
+[data-shown="bar"] .appicon{display:none}
+[data-shown="bar"] h1{margin-bottom:20px}
+[data-shown="bar"] .alt{margin-top:14px}
+.bm{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:30px;align-items:center;text-align:left}
+.bar-scene{display:block;width:100%;max-width:min(480px,calc((100vh - 250px) * 1.846));min-width:240px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 10px 28px rgba(16,24,40,.13)}
+.bm-steps{margin:0;padding:0;list-style:none}
+.bm-step{display:flex;gap:14px;align-items:flex-start;margin:0 0 16px}
+.bm-step:last-child{margin-bottom:0}
+.bm-n{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:2px solid var(--line2);border-radius:50%;color:var(--ink2);font-size:15px;font-weight:800}
+.bm-step.now .bm-n{border-color:var(--navy);background:var(--navy);color:#fff}
+.bm-step.did .bm-n{border-color:var(--oktext);background:var(--oktext);color:transparent;position:relative}
+.bm-step.did .bm-n::after{content:"";position:absolute;left:9px;top:5px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.bm-t{margin:2px 0 0;color:var(--ink2);font-weight:800}
+.bm-step.now .bm-t,.bm-step.did .bm-t{color:var(--ink)}
+.bm-sub{margin:3px 0 0;color:var(--ink2);font-size:14px}
+.bm-btn{display:inline-flex;align-items:center;gap:10px;margin:10px 0 2px;padding:9px 18px 9px 10px;border:2px dashed var(--navy);border-radius:12px;
+  background:#fff;color:var(--navy);font-size:17px;font-weight:800;text-decoration:none;cursor:grab;-webkit-user-select:none;user-select:none}
+.bm-btn:hover{background:#f2f6fa}
+.bm-btn:active{cursor:grabbing}
+.bm-btn .bm-ic{flex:none;width:28px;height:28px}
+.bm-grip{flex:none;width:10px;height:18px;color:#8a97a5}
+.bm-up{display:inline-block;margin-left:12px;color:var(--orange);font-size:22px;font-weight:800;vertical-align:middle;animation:bm-up 1.4s ease-in-out infinite}
+.bm-step:not(.now) .bm-up{visibility:hidden;animation:none}
+@keyframes bm-up{0%,100%{transform:translateY(4px)}50%{transform:translateY(-5px)}}
+.bm-btn.nudge{animation:bm-nudge .5s}
+@keyframes bm-nudge{0%,100%{transform:none}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.bm-say{min-height:1.55em;margin:12px 0 0;color:var(--blue);font-size:15px;font-weight:700;text-align:center}
+.bm-say.good{color:var(--oktext)}
+.bm-say:empty{margin:0;min-height:0}
+/* While the button is being dragged: where to let go, at the very top of the page (the bar is just above it). */
+.drop-here{display:none}
+.dragging .drop-here{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:center;pointer-events:none}
+.drop-here span{margin-top:8px;padding:9px 20px;border-radius:999px;background:var(--orange);color:#fff;font-weight:800;box-shadow:0 6px 18px rgba(16,24,40,.25)}
+@media (max-width:760px){.bm{grid-template-columns:1fr;gap:22px}[data-shown="bar"] .card{padding:24px 18px 22px}}
+/* The picture: the keys show the bar, the button is dragged up to it, lands, and is clicked. 9 seconds, round and round. */
+.bar-scene .os-mac{display:none}
+[data-os="mac"] .bar-scene .os-mac{display:inline}
+[data-os="mac"] .bar-scene .os-pc{display:none}
+.bar-scene .bmbar,.bar-scene .keys,.bar-scene .ghost,.bar-scene .bm-drop,.bar-scene .bm-new,.bar-scene .bm-hover,.bar-scene .brp1,.bar-scene .brp2,.bar-scene .bbadge{opacity:0}
+.bar-scene .keys,.bar-scene .bm-new,.bar-scene .brp1,.bar-scene .brp2,.bar-scene .bbadge{transform-box:fill-box;transform-origin:center}
+.bar-scene .bcur{transform:translate(420px,210px)}
+.bar-scene .bmbar{animation:bm-bar 9s infinite}
+.bar-scene .pg{animation:bm-pg 9s infinite}
+.bar-scene .keys{animation:bm-keys 9s infinite}
+.bar-scene .kt{animation:bm-kt 9s infinite}
+.bar-scene .bcur{animation:bm-cur 9s infinite}
+.bar-scene .ghost{animation:bm-ghost 9s infinite}
+.bar-scene .src{animation:bm-src 9s infinite}
+.bar-scene .bm-drop{animation:bm-drop 9s infinite}
+.bar-scene .bm-new{animation:bm-new 9s infinite}
+.bar-scene .bm-old{animation:bm-old 9s infinite}
+.bar-scene .bm-hover{animation:bm-hover 9s infinite}
+.bar-scene .brp1{animation:bm-rp1 9s infinite}
+.bar-scene .brp2{animation:bm-rp2 9s infinite}
+.bar-scene .bbadge{animation:bm-badge 9s infinite}
+@keyframes bm-bar{0%,13%{opacity:0;transform:translateY(-4px)}17%,92%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes bm-pg{0%,13%{transform:none}17%,93%{transform:translateY(26px)}98%,100%{transform:none}}
+@keyframes bm-keys{0%,4%{opacity:0;transform:scale(.92)}8%,20%{opacity:1;transform:none}25%,100%{opacity:0;transform:none}}
+@keyframes bm-kt{0%,10%{transform:none}12%,17%{transform:translateY(2.5px)}19%,100%{transform:none}}
+@keyframes bm-cur{0%,24%{transform:translate(420px,210px);opacity:1}36%,40%{transform:translate(178px,205px)}55%,59%{transform:translate(30px,80px)}66%,90%{transform:translate(58px,79px);opacity:1}95%,100%{transform:translate(58px,79px);opacity:0}}
+@keyframes bm-ghost{0%,39%{opacity:0;transform:none}41%{opacity:.85;transform:none}55%,58%{opacity:.85;transform:translate(-148px,-125px)}61%,100%{opacity:0;transform:translate(-148px,-125px)}}
+@keyframes bm-src{0%,39%{opacity:1}41%,58%{opacity:.45}62%,100%{opacity:1}}
+@keyframes bm-drop{0%,49%{opacity:0}52%,58%{opacity:1}60%,100%{opacity:0}}
+@keyframes bm-new{0%,58%{opacity:0;transform:scale(.7)}61%{opacity:1;transform:scale(1.06)}63%,92%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes bm-old{0%,58%{transform:none}62%,94%{transform:translateX(108px)}99%,100%{transform:none}}
+@keyframes bm-hover{0%,66%{opacity:0}68%,90%{opacity:1}94%,100%{opacity:0}}
+@keyframes bm-rp1{0%,37%{opacity:0;transform:scale(.4)}39%{opacity:1;transform:scale(.6)}47%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes bm-rp2{0%,70%{opacity:0;transform:scale(.4)}72%{opacity:1;transform:scale(.6)}80%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes bm-badge{0%,74%{opacity:0;transform:translateY(6px)}78%,91%{opacity:1;transform:none}95%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .bar-scene *,.bm-up,.bm-btn.nudge{animation:none!important}
+  .bar-scene .bmbar,.bar-scene .bm-drop{opacity:1}
+  .bar-scene .pg{transform:translateY(26px)}
+  .bar-scene .ghost{opacity:.85;transform:translate(-148px,-125px)}
+  .bar-scene .src{opacity:.45}
+  .bar-scene .bcur{transform:translate(30px,80px)}
+}
+.setup{width:100%;max-width:520px;margin:0 0 16px;padding:12px 16px;border-radius:12px;background:var(--warnbg);color:var(--warntext);font-size:15px}
+.foot{max-width:520px;margin:18px 0 0;color:var(--ink2);font-size:13px;text-align:center}
+.going-msg{display:none}
+.going body{background:var(--navy)}
+.going .band,.going .card,.going .setup,.going .foot{display:none}
+.going .going-msg{display:flex;flex-direction:column;align-items:center;gap:16px;color:#fff;text-align:center}
+.going-msg svg{width:88px;height:88px}
+.going-t{margin:0;font-size:19px;font-weight:800}
+.going-bar{position:relative;width:180px;height:4px;overflow:hidden;border-radius:2px;background:rgba(255,255,255,.18)}
+.going-bar span{position:absolute;top:0;left:-40%;width:40%;height:100%;border-radius:2px;background:var(--orange);animation:going-bar 1.1s ease-in-out infinite}
+@keyframes going-bar{from{left:-40%}to{left:100%}}
+@media (prefers-reduced-motion:reduce){.going-bar span{left:0;width:100%;opacity:.6;animation:none}}
+.going-note{max-width:min(46ch,90vw);margin:0;color:rgba(255,255,255,.82);font-size:14px;font-weight:600}
+.going-note a{color:#fff;font-weight:800}
+/* The app's first opening: keep it on the taskbar */
+.pin{display:none}
+.pinning .band,.pinning .card,.pinning .setup,.pinning .foot{display:none}
+.pinning .pin{display:flex;flex-direction:column;align-items:center;width:100%;max-width:560px;text-align:center}
+.pin h1{margin:0 0 6px}
+.pin-sub{margin:0 0 18px;color:var(--ink2)}
+.pin-scene{display:none;width:100%;max-width:min(480px,calc((100vh - 380px) * 1.846));min-width:240px;height:auto;border-radius:16px;box-shadow:0 10px 28px rgba(16,24,40,.13)}
+[data-os="windows"] .pin-scene[data-os="windows"],[data-os="mac"] .pin-scene[data-os="mac"],[data-os="chromeos"] .pin-scene[data-os="chromeos"]{display:block}
+.pin-steps{max-width:40ch;margin:20px auto 22px;padding-left:1.4em;text-align:left}
+.pin-steps li{margin:0 0 8px;padding-left:4px}
+.pin-scene .cur{transform:translate(420px,70px)}
+.pin-scene .menu,.pin-scene .menu2,.pin-scene .hl,.pin-scene .hl2,.pin-scene .badge,.pin-scene .rp1,.pin-scene .rp2{opacity:0}
+.pin-scene .rp1,.pin-scene .rp2{transform-box:fill-box;transform-origin:center}
+.pin-scene[data-os="windows"] .cur{animation:pin-cur-w 7s infinite}
+.pin-scene[data-os="chromeos"] .cur{animation:pin-cur-c 7s infinite}
+.pin-scene[data-os="mac"] .cur{animation:pin-cur-m 7s infinite}
+.pin-scene .menu{animation:pin-menu 7s infinite}
+.pin-scene .hl{animation:pin-hl 7s infinite}
+.pin-scene .rp1{animation:pin-rp1 7s infinite}
+.pin-scene .rp2{animation:pin-rp2 7s infinite}
+.pin-scene .badge{animation:pin-badge 7s infinite}
+.pin-scene[data-os="mac"] .hl{animation:pin-hl-m 7s infinite}
+.pin-scene .menu2{animation:pin-menu2 7s infinite}
+.pin-scene .hl2{animation:pin-hl2 7s infinite}
+.pin-scene .hl-ink{animation:pin-ink1 7s infinite}
+.pin-scene .hl2-ink{animation:pin-ink2 7s infinite}
+@keyframes pin-cur-w{0%,8%{transform:translate(420px,70px);opacity:1}35%,40%{transform:translate(329px,236px)}56%,66%{transform:translate(396px,155px)}82%,92%{transform:translate(430px,118px);opacity:1}97%,100%{transform:translate(430px,118px);opacity:0}}
+@keyframes pin-cur-c{0%,8%{transform:translate(420px,70px);opacity:1}35%,40%{transform:translate(299px,238px)}56%,66%{transform:translate(352px,159px)}82%,92%{transform:translate(420px,124px);opacity:1}97%,100%{transform:translate(420px,124px);opacity:0}}
+@keyframes pin-cur-m{0%,8%{transform:translate(420px,60px);opacity:1}35%,40%{transform:translate(263px,233px)}50%,54%{transform:translate(304px,116px)}63%,68%{transform:translate(446px,116px)}84%,92%{transform:translate(430px,170px);opacity:1}97%,100%{transform:translate(430px,170px);opacity:0}}
+@keyframes pin-menu{0%,39%{opacity:0;transform:translateY(6px)}42%,68%{opacity:1;transform:none}71%,100%{opacity:0;transform:none}}
+@keyframes pin-hl{0%,54%{opacity:0}57%,68%{opacity:1}71%,100%{opacity:0}}
+@keyframes pin-hl-m{0%,49%{opacity:0}51%,69%{opacity:1}72%,100%{opacity:0}}
+@keyframes pin-menu2{0%,51%{opacity:0}54%,69%{opacity:1}72%,100%{opacity:0}}
+@keyframes pin-hl2{0%,61%{opacity:0}63%,69%{opacity:1}72%,100%{opacity:0}}
+@keyframes pin-ink1{0%,49%{fill:#1a2430}51%,69%{fill:#fff}72%,100%{fill:#1a2430}}
+@keyframes pin-ink2{0%,61%{fill:#1a2430}63%,69%{fill:#fff}72%,100%{fill:#1a2430}}
+@keyframes pin-rp1{0%,35%{opacity:0;transform:scale(.4)}37%{opacity:1;transform:scale(.6)}45%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes pin-rp2{0%,64%{opacity:0;transform:scale(.4)}66%{opacity:1;transform:scale(.6)}74%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes pin-badge{0%,71%{opacity:0;transform:translateY(6px)}75%,91%{opacity:1;transform:none}96%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .pin-scene *{animation:none!important}
+  .pin-scene .menu,.pin-scene .menu2,.pin-scene .hl,.pin-scene .hl2{opacity:1}
+  .pin-scene .hl-ink,.pin-scene .hl2-ink{fill:#fff}
+  .pin-scene[data-os="windows"] .cur{transform:translate(396px,155px)}
+  .pin-scene[data-os="chromeos"] .cur{transform:translate(352px,159px)}
+  .pin-scene[data-os="mac"] .cur{transform:translate(446px,116px)}
+}
+[hidden]{display:none!important}
+@media (max-width:480px){.card{padding:26px 18px 22px}h1{font-size:22px}.lead{margin-bottom:20px}}
+</style>
+</head>
+<body>
+<div class="drop-here" aria-hidden="true"><span>↑ Let go on the <span class="bm-name">bookmarks bar</span>, just above</span></div>
+<div class="band"></div>
+<main>
+  <div class="going-msg" role="status"><svg class="going-ic" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M106.0 197.6L106.0 197.6Q106.0 183.2 111.3 169.4Q116.6 155.6 126.8 144.3Q137.0 133.0 151.6 126.2Q166.2 119.5 184.8 119.5L184.8 119.5Q207.0 119.5 223.2 129.0Q239.5 138.5 247.5 153.8L247.5 153.8L219.6 173.3Q216.0 164.9 210.2 160.2Q204.3 155.6 197.3 153.7Q190.4 151.8 183.9 151.8L183.9 151.8Q173.5 151.8 165.8 155.9Q158.0 160.0 152.9 166.8Q147.8 173.7 145.4 182.1Q143.0 190.5 143.0 198.9L143.0 198.9Q143.0 208.2 145.9 216.9Q148.7 225.5 154.2 232.2Q159.6 238.8 167.3 242.7Q175.1 246.6 184.4 246.6L184.4 246.6Q191.0 246.6 197.9 244.3Q204.7 242.1 210.6 237.4Q216.5 232.6 219.6 224.9L219.6 224.9L249.2 242.3Q244.6 253.9 234.0 262.0Q223.3 270.2 209.9 274.6Q196.6 278.9 183.5 278.9L183.5 278.9Q166.4 278.9 152.2 271.9Q137.9 264.9 127.6 253.3Q117.3 241.7 111.6 227.2Q106.0 212.7 106.0 197.6ZM262.8 197.6L262.8 197.6Q262.8 183.2 268.1 169.4Q273.4 155.6 283.6 144.3Q293.7 133.0 308.4 126.2Q323.0 119.5 341.6 119.5L341.6 119.5Q363.7 119.5 380.0 129.0Q396.3 138.5 404.2 153.8L404.2 153.8L376.3 173.3Q372.8 164.9 366.9 160.2Q361.1 155.6 354.1 153.7Q347.1 151.8 340.7 151.8L340.7 151.8Q330.3 151.8 322.5 155.9Q314.8 160.0 309.7 166.8Q304.6 173.7 302.2 182.1Q299.7 190.5 299.7 198.9L299.7 198.9Q299.7 208.2 302.6 216.9Q305.5 225.5 310.9 232.2Q316.3 238.8 324.1 242.7Q331.8 246.6 341.1 246.6L341.1 246.6Q347.8 246.6 354.6 244.3Q361.5 242.1 367.4 237.4Q373.2 232.6 376.3 224.9L376.3 224.9L406 242.3Q401.4 253.9 390.7 262.0Q380.1 270.2 366.7 274.6Q353.3 278.9 340.2 278.9L340.2 278.9Q323.2 278.9 308.9 271.9Q294.6 264.9 284.3 253.3Q274.0 241.7 268.4 227.2Q262.8 212.7 262.8 197.6Z" fill="#FFFFFF"/><rect x="196.0" y="308.9" width="120" height="14" rx="7" fill="#F26722"/><path d="M84.5 392.1L70.0 392.1L70.0 353.2L84.5 353.2Q90.9 353.2 95.2 355.8Q99.5 358.4 101.7 362.8Q103.9 367.2 103.9 372.6L103.9 372.6Q103.9 378.5 101.5 382.9Q99.1 387.3 94.7 389.7Q90.4 392.1 84.5 392.1L84.5 392.1ZM94.8 372.6L94.8 372.6Q94.8 369.2 93.6 366.6Q92.3 364.0 90.0 362.5Q87.7 361.1 84.5 361.1L84.5 361.1L79.0 361.1L79.0 384.2L84.5 384.2Q87.8 384.2 90.1 382.7Q92.3 381.2 93.6 378.5Q94.8 375.9 94.8 372.6ZM110.0 392.1L123.4 353.2L133.1 353.2L146.5 392.1L137.3 392.1L134.3 383.4L122.1 383.4L119.2 392.1L110.0 392.1ZM123.6 377.2L132.8 377.2L128.2 362.2L123.6 377.2ZM182.0 357.1L178.0 364.6Q177.9 364.3 176.9 363.7Q175.9 363.2 174.4 362.5Q172.9 361.9 171.2 361.4Q169.4 360.9 167.7 360.9L167.7 360.9Q165.4 360.9 164.1 361.7Q162.8 362.5 162.8 364.1L162.8 364.1Q162.8 365.4 163.8 366.2Q164.8 367.0 166.6 367.5Q168.4 368.1 171.0 368.9L171.0 368.9Q174.7 369.9 177.5 371.3Q180.2 372.7 181.7 374.8Q183.1 377.0 183.1 380.6L183.1 380.6Q183.1 383.9 181.9 386.2Q180.7 388.5 178.7 389.9Q176.6 391.3 174.0 391.9Q171.3 392.5 168.5 392.5L168.5 392.5Q165.7 392.5 162.7 392.0Q159.7 391.4 157.0 390.3Q154.2 389.2 151.9 387.7L151.9 387.7L155.9 379.9Q156.1 380.2 157.3 380.9Q158.5 381.6 160.3 382.4Q162.1 383.2 164.3 383.8Q166.5 384.4 168.7 384.4L168.7 384.4Q171.1 384.4 172.3 383.7Q173.5 382.9 173.5 381.5L173.5 381.5Q173.5 380.0 172.2 379.2Q171.0 378.4 168.9 377.7Q166.8 377.1 164.1 376.3L164.1 376.3Q160.5 375.2 158.2 373.8Q155.8 372.4 154.7 370.5Q153.6 368.5 153.6 365.5L153.6 365.5Q153.6 361.4 155.5 358.6Q157.5 355.8 160.8 354.3Q164.1 352.9 167.9 352.9L167.9 352.9Q170.7 352.9 173.2 353.5Q175.8 354.2 178.0 355.2Q180.2 356.2 182.0 357.1L182.0 357.1ZM217.2 353.2L226.2 353.2L226.2 392.1L217.2 392.1L217.2 376.2L201.7 376.2L201.7 392.1L192.8 392.1L192.8 353.2L201.7 353.2L201.7 368.3L217.2 368.3L217.2 353.2ZM270.2 382.1L270.2 382.1Q270.2 385.5 268.4 387.7Q266.7 389.9 263.6 391.0Q260.6 392.1 257.0 392.1L257.0 392.1L238.1 392.1L238.1 353.2L259.7 353.2Q262.4 353.2 264.4 354.7Q266.4 356.1 267.5 358.4Q268.6 360.7 268.6 363.2L268.6 363.2Q268.6 365.9 267.1 368.4Q265.7 370.9 263.0 372.2L263.0 372.2Q266.3 373.1 268.3 375.7Q270.2 378.2 270.2 382.1ZM261.1 380.3L261.1 380.3Q261.1 379.1 260.6 378.1Q260.1 377.1 259.3 376.6Q258.5 376.0 257.4 376.0L257.4 376.0L247.0 376.0L247.0 384.5L257.0 384.5Q258.2 384.5 259.1 383.9Q260.0 383.4 260.5 382.5Q261.1 381.5 261.1 380.3ZM256.2 360.9L247.0 360.9L247.0 368.9L255.9 368.9Q256.8 368.9 257.7 368.5Q258.5 368.0 259.1 367.1Q259.6 366.2 259.6 364.9L259.6 364.9Q259.6 363.6 259.2 362.7Q258.7 361.8 257.9 361.3Q257.2 360.9 256.2 360.9L256.2 360.9ZM296.9 392.4L296.9 392.4Q292.6 392.4 289.0 390.8Q285.5 389.1 283.0 386.3Q280.4 383.4 279.0 379.9Q277.7 376.4 277.7 372.6L277.7 372.6Q277.7 368.7 279.1 365.2Q280.6 361.7 283.2 358.9Q285.8 356.2 289.3 354.6Q292.9 353.0 297.1 353.0L297.1 353.0Q301.4 353.0 305.0 354.7Q308.5 356.3 311.1 359.2Q313.6 362.0 315.0 365.6Q316.3 369.1 316.3 372.8L316.3 372.8Q316.3 376.6 314.9 380.2Q313.5 383.7 310.9 386.4Q308.2 389.2 304.7 390.8Q301.2 392.4 296.9 392.4ZM286.8 372.7L286.8 372.7Q286.8 375.0 287.5 377.1Q288.1 379.2 289.4 380.8Q290.7 382.5 292.6 383.4Q294.5 384.4 297.0 384.4L297.0 384.4Q299.6 384.4 301.5 383.4Q303.4 382.4 304.7 380.7Q305.9 379.0 306.6 376.9Q307.2 374.8 307.2 372.6L307.2 372.6Q307.2 370.3 306.5 368.3Q305.9 366.2 304.6 364.5Q303.2 362.8 301.3 361.9Q299.4 361.0 297.0 361.0L297.0 361.0Q294.4 361.0 292.5 362.0Q290.6 363.0 289.4 364.6Q288.1 366.3 287.4 368.4Q286.8 370.5 286.8 372.7ZM322.3 392.1L335.7 353.2L345.4 353.2L358.8 392.1L349.6 392.1L346.6 383.4L334.5 383.4L331.5 392.1L322.3 392.1ZM335.9 377.2L345.1 377.2L340.6 362.2L335.9 377.2ZM376.0 392.1L367.0 392.1L367.0 353.2L384.5 353.2Q387.3 353.2 389.6 354.3Q391.9 355.4 393.6 357.3Q395.3 359.2 396.3 361.6Q397.2 363.9 397.2 366.4L397.2 366.4Q397.2 368.8 396.5 370.9Q395.7 373.1 394.3 374.8Q392.9 376.5 390.9 377.6L390.9 377.6L399.4 392.1L389.5 392.1L382.1 379.6L376.0 379.6L376.0 392.1ZM376.0 361.1L376.0 371.7L384.2 371.7Q385.3 371.7 386.2 371.0Q387.0 370.3 387.6 369.1Q388.1 367.9 388.1 366.4L388.1 366.4Q388.1 364.8 387.5 363.6Q386.8 362.4 385.9 361.7Q385.0 361.1 383.9 361.1L383.9 361.1L376.0 361.1ZM422.6 392.1L408.1 392.1L408.1 353.2L422.6 353.2Q429.0 353.2 433.3 355.8Q437.6 358.4 439.8 362.8Q442 367.2 442 372.6L442 372.6Q442 378.5 439.6 382.9Q437.2 387.3 432.8 389.7Q428.5 392.1 422.6 392.1L422.6 392.1ZM432.9 372.6L432.9 372.6Q432.9 369.2 431.6 366.6Q430.4 364.0 428.1 362.5Q425.8 361.1 422.6 361.1L422.6 361.1L417.1 361.1L417.1 384.2L422.6 384.2Q425.9 384.2 428.2 382.7Q430.4 381.2 431.6 378.5Q432.9 375.9 432.9 372.6Z" fill="#FFFFFF"/></svg><p class="going-t">Opening Community Connect…</p><div class="going-bar" aria-hidden="true"><span></span></div><p class="going-note" id="going-slow" hidden>The first time each day takes a little longer.</p><p class="going-note" id="going-stuck" hidden>Still not open? <a id="going-again" href="#">Try again</a></p></div>
+
+  <section class="pin" id="pin" aria-labelledby="pin-h">
+    <h1 id="pin-h">Last step: keep it on your taskbar</h1>
+    <p class="pin-sub" id="pin-sub">So it’s always one click away.</p>
+    <svg class="pin-scene" data-os="windows" viewBox="0 0 480 260" aria-hidden="true"><defs><linearGradient id="pin-sky-w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8eff6"/><stop offset="1" stop-color="#c8d5e2"/></linearGradient></defs><defs><clipPath id="pin-clip-w"><rect width="480" height="260" rx="16"/></clipPath></defs><g clip-path="url(#pin-clip-w)"><rect width="480" height="260" fill="#dde6ef"/><rect width="480" height="260" fill="url(#pin-sky-w)"/><g><rect x="64" y="20" width="352" height="160" rx="9" fill="#fff"/><path d="M73 20h334a9 9 0 0 1 9 9v13H64V29a9 9 0 0 1 9-9z" fill="#003047"/><text x="80" y="35.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#fff">Community Connect</text><rect x="84" y="60" width="128" height="11" rx="5.5" fill="#d7e0e8"/><rect x="84" y="84" width="300" height="8" rx="4" fill="#edf1f5"/><rect x="84" y="100" width="262" height="8" rx="4" fill="#edf1f5"/><rect x="84" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/><rect x="186" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/><rect x="288" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/></g><rect x="0" y="214" width="480" height="46" fill="#1e2935"/><g transform="translate(150 225)"><rect width="10" height="10" rx="1.5" fill="#4ba3f2"/><rect x="12" width="10" height="10" rx="1.5" fill="#4ba3f2"/><rect y="12" width="10" height="10" rx="1.5" fill="#4ba3f2"/><rect x="12" y="12" width="10" height="10" rx="1.5" fill="#4ba3f2"/></g><g transform="translate(192 225)" fill="none" stroke="#cfd8e3" stroke-width="2.6"><circle cx="9" cy="9" r="7"/><path d="M14 14l7 7" stroke-linecap="round"/></g><g transform="translate(232 226)"><path d="M0 4a3 3 0 0 1 3-3h7l3 3h9a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3z" fill="#f2c94c"/></g><g transform="translate(276 225)"><circle cx="11" cy="11" r="11" fill="#e8eef5"/><circle cx="11" cy="11" r="4.5" fill="#4ba3f2"/></g><svg x="314" y="221" width="30" height="30" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M106.0 197.6L106.0 197.6Q106.0 183.2 111.3 169.4Q116.6 155.6 126.8 144.3Q137.0 133.0 151.6 126.2Q166.2 119.5 184.8 119.5L184.8 119.5Q207.0 119.5 223.2 129.0Q239.5 138.5 247.5 153.8L247.5 153.8L219.6 173.3Q216.0 164.9 210.2 160.2Q204.3 155.6 197.3 153.7Q190.4 151.8 183.9 151.8L183.9 151.8Q173.5 151.8 165.8 155.9Q158.0 160.0 152.9 166.8Q147.8 173.7 145.4 182.1Q143.0 190.5 143.0 198.9L143.0 198.9Q143.0 208.2 145.9 216.9Q148.7 225.5 154.2 232.2Q159.6 238.8 167.3 242.7Q175.1 246.6 184.4 246.6L184.4 246.6Q191.0 246.6 197.9 244.3Q204.7 242.1 210.6 237.4Q216.5 232.6 219.6 224.9L219.6 224.9L249.2 242.3Q244.6 253.9 234.0 262.0Q223.3 270.2 209.9 274.6Q196.6 278.9 183.5 278.9L183.5 278.9Q166.4 278.9 152.2 271.9Q137.9 264.9 127.6 253.3Q117.3 241.7 111.6 227.2Q106.0 212.7 106.0 197.6ZM262.8 197.6L262.8 197.6Q262.8 183.2 268.1 169.4Q273.4 155.6 283.6 144.3Q293.7 133.0 308.4 126.2Q323.0 119.5 341.6 119.5L341.6 119.5Q363.7 119.5 380.0 129.0Q396.3 138.5 404.2 153.8L404.2 153.8L376.3 173.3Q372.8 164.9 366.9 160.2Q361.1 155.6 354.1 153.7Q347.1 151.8 340.7 151.8L340.7 151.8Q330.3 151.8 322.5 155.9Q314.8 160.0 309.7 166.8Q304.6 173.7 302.2 182.1Q299.7 190.5 299.7 198.9L299.7 198.9Q299.7 208.2 302.6 216.9Q305.5 225.5 310.9 232.2Q316.3 238.8 324.1 242.7Q331.8 246.6 341.1 246.6L341.1 246.6Q347.8 246.6 354.6 244.3Q361.5 242.1 367.4 237.4Q373.2 232.6 376.3 224.9L376.3 224.9L406 242.3Q401.4 253.9 390.7 262.0Q380.1 270.2 366.7 274.6Q353.3 278.9 340.2 278.9L340.2 278.9Q323.2 278.9 308.9 271.9Q294.6 264.9 284.3 253.3Q274.0 241.7 268.4 227.2Q262.8 212.7 262.8 197.6Z" fill="#FFFFFF"/><rect x="196.0" y="308.9" width="120" height="14" rx="7" fill="#F26722"/><path d="M84.5 392.1L70.0 392.1L70.0 353.2L84.5 353.2Q90.9 353.2 95.2 355.8Q99.5 358.4 101.7 362.8Q103.9 367.2 103.9 372.6L103.9 372.6Q103.9 378.5 101.5 382.9Q99.1 387.3 94.7 389.7Q90.4 392.1 84.5 392.1L84.5 392.1ZM94.8 372.6L94.8 372.6Q94.8 369.2 93.6 366.6Q92.3 364.0 90.0 362.5Q87.7 361.1 84.5 361.1L84.5 361.1L79.0 361.1L79.0 384.2L84.5 384.2Q87.8 384.2 90.1 382.7Q92.3 381.2 93.6 378.5Q94.8 375.9 94.8 372.6ZM110.0 392.1L123.4 353.2L133.1 353.2L146.5 392.1L137.3 392.1L134.3 383.4L122.1 383.4L119.2 392.1L110.0 392.1ZM123.6 377.2L132.8 377.2L128.2 362.2L123.6 377.2ZM182.0 357.1L178.0 364.6Q177.9 364.3 176.9 363.7Q175.9 363.2 174.4 362.5Q172.9 361.9 171.2 361.4Q169.4 360.9 167.7 360.9L167.7 360.9Q165.4 360.9 164.1 361.7Q162.8 362.5 162.8 364.1L162.8 364.1Q162.8 365.4 163.8 366.2Q164.8 367.0 166.6 367.5Q168.4 368.1 171.0 368.9L171.0 368.9Q174.7 369.9 177.5 371.3Q180.2 372.7 181.7 374.8Q183.1 377.0 183.1 380.6L183.1 380.6Q183.1 383.9 181.9 386.2Q180.7 388.5 178.7 389.9Q176.6 391.3 174.0 391.9Q171.3 392.5 168.5 392.5L168.5 392.5Q165.7 392.5 162.7 392.0Q159.7 391.4 157.0 390.3Q154.2 389.2 151.9 387.7L151.9 387.7L155.9 379.9Q156.1 380.2 157.3 380.9Q158.5 381.6 160.3 382.4Q162.1 383.2 164.3 383.8Q166.5 384.4 168.7 384.4L168.7 384.4Q171.1 384.4 172.3 383.7Q173.5 382.9 173.5 381.5L173.5 381.5Q173.5 380.0 172.2 379.2Q171.0 378.4 168.9 377.7Q166.8 377.1 164.1 376.3L164.1 376.3Q160.5 375.2 158.2 373.8Q155.8 372.4 154.7 370.5Q153.6 368.5 153.6 365.5L153.6 365.5Q153.6 361.4 155.5 358.6Q157.5 355.8 160.8 354.3Q164.1 352.9 167.9 352.9L167.9 352.9Q170.7 352.9 173.2 353.5Q175.8 354.2 178.0 355.2Q180.2 356.2 182.0 357.1L182.0 357.1ZM217.2 353.2L226.2 353.2L226.2 392.1L217.2 392.1L217.2 376.2L201.7 376.2L201.7 392.1L192.8 392.1L192.8 353.2L201.7 353.2L201.7 368.3L217.2 368.3L217.2 353.2ZM270.2 382.1L270.2 382.1Q270.2 385.5 268.4 387.7Q266.7 389.9 263.6 391.0Q260.6 392.1 257.0 392.1L257.0 392.1L238.1 392.1L238.1 353.2L259.7 353.2Q262.4 353.2 264.4 354.7Q266.4 356.1 267.5 358.4Q268.6 360.7 268.6 363.2L268.6 363.2Q268.6 365.9 267.1 368.4Q265.7 370.9 263.0 372.2L263.0 372.2Q266.3 373.1 268.3 375.7Q270.2 378.2 270.2 382.1ZM261.1 380.3L261.1 380.3Q261.1 379.1 260.6 378.1Q260.1 377.1 259.3 376.6Q258.5 376.0 257.4 376.0L257.4 376.0L247.0 376.0L247.0 384.5L257.0 384.5Q258.2 384.5 259.1 383.9Q260.0 383.4 260.5 382.5Q261.1 381.5 261.1 380.3ZM256.2 360.9L247.0 360.9L247.0 368.9L255.9 368.9Q256.8 368.9 257.7 368.5Q258.5 368.0 259.1 367.1Q259.6 366.2 259.6 364.9L259.6 364.9Q259.6 363.6 259.2 362.7Q258.7 361.8 257.9 361.3Q257.2 360.9 256.2 360.9L256.2 360.9ZM296.9 392.4L296.9 392.4Q292.6 392.4 289.0 390.8Q285.5 389.1 283.0 386.3Q280.4 383.4 279.0 379.9Q277.7 376.4 277.7 372.6L277.7 372.6Q277.7 368.7 279.1 365.2Q280.6 361.7 283.2 358.9Q285.8 356.2 289.3 354.6Q292.9 353.0 297.1 353.0L297.1 353.0Q301.4 353.0 305.0 354.7Q308.5 356.3 311.1 359.2Q313.6 362.0 315.0 365.6Q316.3 369.1 316.3 372.8L316.3 372.8Q316.3 376.6 314.9 380.2Q313.5 383.7 310.9 386.4Q308.2 389.2 304.7 390.8Q301.2 392.4 296.9 392.4ZM286.8 372.7L286.8 372.7Q286.8 375.0 287.5 377.1Q288.1 379.2 289.4 380.8Q290.7 382.5 292.6 383.4Q294.5 384.4 297.0 384.4L297.0 384.4Q299.6 384.4 301.5 383.4Q303.4 382.4 304.7 380.7Q305.9 379.0 306.6 376.9Q307.2 374.8 307.2 372.6L307.2 372.6Q307.2 370.3 306.5 368.3Q305.9 366.2 304.6 364.5Q303.2 362.8 301.3 361.9Q299.4 361.0 297.0 361.0L297.0 361.0Q294.4 361.0 292.5 362.0Q290.6 363.0 289.4 364.6Q288.1 366.3 287.4 368.4Q286.8 370.5 286.8 372.7ZM322.3 392.1L335.7 353.2L345.4 353.2L358.8 392.1L349.6 392.1L346.6 383.4L334.5 383.4L331.5 392.1L322.3 392.1ZM335.9 377.2L345.1 377.2L340.6 362.2L335.9 377.2ZM376.0 392.1L367.0 392.1L367.0 353.2L384.5 353.2Q387.3 353.2 389.6 354.3Q391.9 355.4 393.6 357.3Q395.3 359.2 396.3 361.6Q397.2 363.9 397.2 366.4L397.2 366.4Q397.2 368.8 396.5 370.9Q395.7 373.1 394.3 374.8Q392.9 376.5 390.9 377.6L390.9 377.6L399.4 392.1L389.5 392.1L382.1 379.6L376.0 379.6L376.0 392.1ZM376.0 361.1L376.0 371.7L384.2 371.7Q385.3 371.7 386.2 371.0Q387.0 370.3 387.6 369.1Q388.1 367.9 388.1 366.4L388.1 366.4Q388.1 364.8 387.5 363.6Q386.8 362.4 385.9 361.7Q385.0 361.1 383.9 361.1L383.9 361.1L376.0 361.1ZM422.6 392.1L408.1 392.1L408.1 353.2L422.6 353.2Q429.0 353.2 433.3 355.8Q437.6 358.4 439.8 362.8Q442 367.2 442 372.6L442 372.6Q442 378.5 439.6 382.9Q437.2 387.3 432.8 389.7Q428.5 392.1 422.6 392.1L422.6 392.1ZM432.9 372.6L432.9 372.6Q432.9 369.2 431.6 366.6Q430.4 364.0 428.1 362.5Q425.8 361.1 422.6 361.1L422.6 361.1L417.1 361.1L417.1 384.2L422.6 384.2Q425.9 384.2 428.2 382.7Q430.4 381.2 431.6 378.5Q432.9 375.9 432.9 372.6Z" fill="#FFFFFF"/></svg><rect x="322" y="255" width="14" height="3" rx="1.5" fill="#9fb4c9"/><circle class="rp1" cx="329" cy="236" r="16" fill="none" stroke="#F26722" stroke-width="3"/><g class="menu"><rect x="236" y="98" width="190" height="108" rx="10" fill="#2a3542" stroke="#3d4b5c"/><text x="254" y="122" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" fill="#fff">Community Connect</text><rect x="248" y="133" width="166" height="1" fill="#46566a"/><rect class="hl" x="244" y="142" width="174" height="26" rx="6" fill="#40546d"/><g transform="translate(256 148)" fill="#fff"><path d="M5 0h6l-1 5 3 3H3l3-3z"/><rect x="7.2" y="8" width="1.6" height="7" rx=".8"/></g><text x="276" y="160" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">Pin to taskbar</text><g transform="translate(257 179)" stroke="#c4cfdb" stroke-width="1.8" stroke-linecap="round"><path d="M0 0l9 9M9 0L0 9"/></g><text x="276" y="188" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#c4cfdb">Close window</text></g><circle class="rp2" cx="396" cy="155" r="14" fill="none" stroke="#F26722" stroke-width="3"/><g class="badge"><rect x="279" y="176" width="100" height="28" rx="14" fill="#157a33"/><text x="329" y="194.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" fill="#fff">Pinned ✓</text></g><g class="cur"><path d="M0 0L0 23L6 18L10.5 27L14.5 25L10 16L18 16Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></g></g></svg><svg class="pin-scene" data-os="mac" viewBox="0 0 480 260" aria-hidden="true"><defs><linearGradient id="pin-sky-m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8eff6"/><stop offset="1" stop-color="#c8d5e2"/></linearGradient></defs><defs><clipPath id="pin-clip-m"><rect width="480" height="260" rx="16"/></clipPath></defs><g clip-path="url(#pin-clip-m)"><rect width="480" height="260" fill="#dde6ef"/><rect width="480" height="260" fill="url(#pin-sky-m)"/><g><rect x="64" y="20" width="352" height="160" rx="9" fill="#fff"/><path d="M73 20h334a9 9 0 0 1 9 9v13H64V29a9 9 0 0 1 9-9z" fill="#003047"/><text x="80" y="35.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#fff">Community Connect</text><rect x="84" y="60" width="128" height="11" rx="5.5" fill="#d7e0e8"/><rect x="84" y="84" width="300" height="8" rx="4" fill="#edf1f5"/><rect x="84" y="100" width="262" height="8" rx="4" fill="#edf1f5"/><rect x="84" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/><rect x="186" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/><rect x="288" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/></g><rect x="112" y="212" width="256" height="42" rx="13" fill="#fff" fill-opacity=".55" stroke="#fff" stroke-opacity=".9"/><g transform="translate(128 218)"><rect width="30" height="30" rx="7" fill="#5aa9f7"/><rect x="15" width="15" height="30" fill="#e9f2fc"/><rect x="15" width="15" height="30" rx="7" fill="#e9f2fc"/><rect x="15" width="2" height="30" fill="#5aa9f7"/></g><g transform="translate(168 218)"><rect width="30" height="30" rx="7" fill="#3d8ef0"/><path d="M6 10h18v11H6z" fill="#fff"/><path d="M6 10l9 6 9-6" fill="none" stroke="#3d8ef0" stroke-width="2"/></g><g transform="translate(208 218)"><rect width="30" height="30" rx="7" fill="#fff"/><circle cx="15" cy="15" r="10" fill="#e8eef5"/><circle cx="15" cy="15" r="4.5" fill="#4ba3f2"/></g><svg x="248" y="218" width="30" height="30" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M106.0 197.6L106.0 197.6Q106.0 183.2 111.3 169.4Q116.6 155.6 126.8 144.3Q137.0 133.0 151.6 126.2Q166.2 119.5 184.8 119.5L184.8 119.5Q207.0 119.5 223.2 129.0Q239.5 138.5 247.5 153.8L247.5 153.8L219.6 173.3Q216.0 164.9 210.2 160.2Q204.3 155.6 197.3 153.7Q190.4 151.8 183.9 151.8L183.9 151.8Q173.5 151.8 165.8 155.9Q158.0 160.0 152.9 166.8Q147.8 173.7 145.4 182.1Q143.0 190.5 143.0 198.9L143.0 198.9Q143.0 208.2 145.9 216.9Q148.7 225.5 154.2 232.2Q159.6 238.8 167.3 242.7Q175.1 246.6 184.4 246.6L184.4 246.6Q191.0 246.6 197.9 244.3Q204.7 242.1 210.6 237.4Q216.5 232.6 219.6 224.9L219.6 224.9L249.2 242.3Q244.6 253.9 234.0 262.0Q223.3 270.2 209.9 274.6Q196.6 278.9 183.5 278.9L183.5 278.9Q166.4 278.9 152.2 271.9Q137.9 264.9 127.6 253.3Q117.3 241.7 111.6 227.2Q106.0 212.7 106.0 197.6ZM262.8 197.6L262.8 197.6Q262.8 183.2 268.1 169.4Q273.4 155.6 283.6 144.3Q293.7 133.0 308.4 126.2Q323.0 119.5 341.6 119.5L341.6 119.5Q363.7 119.5 380.0 129.0Q396.3 138.5 404.2 153.8L404.2 153.8L376.3 173.3Q372.8 164.9 366.9 160.2Q361.1 155.6 354.1 153.7Q347.1 151.8 340.7 151.8L340.7 151.8Q330.3 151.8 322.5 155.9Q314.8 160.0 309.7 166.8Q304.6 173.7 302.2 182.1Q299.7 190.5 299.7 198.9L299.7 198.9Q299.7 208.2 302.6 216.9Q305.5 225.5 310.9 232.2Q316.3 238.8 324.1 242.7Q331.8 246.6 341.1 246.6L341.1 246.6Q347.8 246.6 354.6 244.3Q361.5 242.1 367.4 237.4Q373.2 232.6 376.3 224.9L376.3 224.9L406 242.3Q401.4 253.9 390.7 262.0Q380.1 270.2 366.7 274.6Q353.3 278.9 340.2 278.9L340.2 278.9Q323.2 278.9 308.9 271.9Q294.6 264.9 284.3 253.3Q274.0 241.7 268.4 227.2Q262.8 212.7 262.8 197.6Z" fill="#FFFFFF"/><rect x="196.0" y="308.9" width="120" height="14" rx="7" fill="#F26722"/><path d="M84.5 392.1L70.0 392.1L70.0 353.2L84.5 353.2Q90.9 353.2 95.2 355.8Q99.5 358.4 101.7 362.8Q103.9 367.2 103.9 372.6L103.9 372.6Q103.9 378.5 101.5 382.9Q99.1 387.3 94.7 389.7Q90.4 392.1 84.5 392.1L84.5 392.1ZM94.8 372.6L94.8 372.6Q94.8 369.2 93.6 366.6Q92.3 364.0 90.0 362.5Q87.7 361.1 84.5 361.1L84.5 361.1L79.0 361.1L79.0 384.2L84.5 384.2Q87.8 384.2 90.1 382.7Q92.3 381.2 93.6 378.5Q94.8 375.9 94.8 372.6ZM110.0 392.1L123.4 353.2L133.1 353.2L146.5 392.1L137.3 392.1L134.3 383.4L122.1 383.4L119.2 392.1L110.0 392.1ZM123.6 377.2L132.8 377.2L128.2 362.2L123.6 377.2ZM182.0 357.1L178.0 364.6Q177.9 364.3 176.9 363.7Q175.9 363.2 174.4 362.5Q172.9 361.9 171.2 361.4Q169.4 360.9 167.7 360.9L167.7 360.9Q165.4 360.9 164.1 361.7Q162.8 362.5 162.8 364.1L162.8 364.1Q162.8 365.4 163.8 366.2Q164.8 367.0 166.6 367.5Q168.4 368.1 171.0 368.9L171.0 368.9Q174.7 369.9 177.5 371.3Q180.2 372.7 181.7 374.8Q183.1 377.0 183.1 380.6L183.1 380.6Q183.1 383.9 181.9 386.2Q180.7 388.5 178.7 389.9Q176.6 391.3 174.0 391.9Q171.3 392.5 168.5 392.5L168.5 392.5Q165.7 392.5 162.7 392.0Q159.7 391.4 157.0 390.3Q154.2 389.2 151.9 387.7L151.9 387.7L155.9 379.9Q156.1 380.2 157.3 380.9Q158.5 381.6 160.3 382.4Q162.1 383.2 164.3 383.8Q166.5 384.4 168.7 384.4L168.7 384.4Q171.1 384.4 172.3 383.7Q173.5 382.9 173.5 381.5L173.5 381.5Q173.5 380.0 172.2 379.2Q171.0 378.4 168.9 377.7Q166.8 377.1 164.1 376.3L164.1 376.3Q160.5 375.2 158.2 373.8Q155.8 372.4 154.7 370.5Q153.6 368.5 153.6 365.5L153.6 365.5Q153.6 361.4 155.5 358.6Q157.5 355.8 160.8 354.3Q164.1 352.9 167.9 352.9L167.9 352.9Q170.7 352.9 173.2 353.5Q175.8 354.2 178.0 355.2Q180.2 356.2 182.0 357.1L182.0 357.1ZM217.2 353.2L226.2 353.2L226.2 392.1L217.2 392.1L217.2 376.2L201.7 376.2L201.7 392.1L192.8 392.1L192.8 353.2L201.7 353.2L201.7 368.3L217.2 368.3L217.2 353.2ZM270.2 382.1L270.2 382.1Q270.2 385.5 268.4 387.7Q266.7 389.9 263.6 391.0Q260.6 392.1 257.0 392.1L257.0 392.1L238.1 392.1L238.1 353.2L259.7 353.2Q262.4 353.2 264.4 354.7Q266.4 356.1 267.5 358.4Q268.6 360.7 268.6 363.2L268.6 363.2Q268.6 365.9 267.1 368.4Q265.7 370.9 263.0 372.2L263.0 372.2Q266.3 373.1 268.3 375.7Q270.2 378.2 270.2 382.1ZM261.1 380.3L261.1 380.3Q261.1 379.1 260.6 378.1Q260.1 377.1 259.3 376.6Q258.5 376.0 257.4 376.0L257.4 376.0L247.0 376.0L247.0 384.5L257.0 384.5Q258.2 384.5 259.1 383.9Q260.0 383.4 260.5 382.5Q261.1 381.5 261.1 380.3ZM256.2 360.9L247.0 360.9L247.0 368.9L255.9 368.9Q256.8 368.9 257.7 368.5Q258.5 368.0 259.1 367.1Q259.6 366.2 259.6 364.9L259.6 364.9Q259.6 363.6 259.2 362.7Q258.7 361.8 257.9 361.3Q257.2 360.9 256.2 360.9L256.2 360.9ZM296.9 392.4L296.9 392.4Q292.6 392.4 289.0 390.8Q285.5 389.1 283.0 386.3Q280.4 383.4 279.0 379.9Q277.7 376.4 277.7 372.6L277.7 372.6Q277.7 368.7 279.1 365.2Q280.6 361.7 283.2 358.9Q285.8 356.2 289.3 354.6Q292.9 353.0 297.1 353.0L297.1 353.0Q301.4 353.0 305.0 354.7Q308.5 356.3 311.1 359.2Q313.6 362.0 315.0 365.6Q316.3 369.1 316.3 372.8L316.3 372.8Q316.3 376.6 314.9 380.2Q313.5 383.7 310.9 386.4Q308.2 389.2 304.7 390.8Q301.2 392.4 296.9 392.4ZM286.8 372.7L286.8 372.7Q286.8 375.0 287.5 377.1Q288.1 379.2 289.4 380.8Q290.7 382.5 292.6 383.4Q294.5 384.4 297.0 384.4L297.0 384.4Q299.6 384.4 301.5 383.4Q303.4 382.4 304.7 380.7Q305.9 379.0 306.6 376.9Q307.2 374.8 307.2 372.6L307.2 372.6Q307.2 370.3 306.5 368.3Q305.9 366.2 304.6 364.5Q303.2 362.8 301.3 361.9Q299.4 361.0 297.0 361.0L297.0 361.0Q294.4 361.0 292.5 362.0Q290.6 363.0 289.4 364.6Q288.1 366.3 287.4 368.4Q286.8 370.5 286.8 372.7ZM322.3 392.1L335.7 353.2L345.4 353.2L358.8 392.1L349.6 392.1L346.6 383.4L334.5 383.4L331.5 392.1L322.3 392.1ZM335.9 377.2L345.1 377.2L340.6 362.2L335.9 377.2ZM376.0 392.1L367.0 392.1L367.0 353.2L384.5 353.2Q387.3 353.2 389.6 354.3Q391.9 355.4 393.6 357.3Q395.3 359.2 396.3 361.6Q397.2 363.9 397.2 366.4L397.2 366.4Q397.2 368.8 396.5 370.9Q395.7 373.1 394.3 374.8Q392.9 376.5 390.9 377.6L390.9 377.6L399.4 392.1L389.5 392.1L382.1 379.6L376.0 379.6L376.0 392.1ZM376.0 361.1L376.0 371.7L384.2 371.7Q385.3 371.7 386.2 371.0Q387.0 370.3 387.6 369.1Q388.1 367.9 388.1 366.4L388.1 366.4Q388.1 364.8 387.5 363.6Q386.8 362.4 385.9 361.7Q385.0 361.1 383.9 361.1L383.9 361.1L376.0 361.1ZM422.6 392.1L408.1 392.1L408.1 353.2L422.6 353.2Q429.0 353.2 433.3 355.8Q437.6 358.4 439.8 362.8Q442 367.2 442 372.6L442 372.6Q442 378.5 439.6 382.9Q437.2 387.3 432.8 389.7Q428.5 392.1 422.6 392.1L422.6 392.1ZM432.9 372.6L432.9 372.6Q432.9 369.2 431.6 366.6Q430.4 364.0 428.1 362.5Q425.8 361.1 422.6 361.1L422.6 361.1L417.1 361.1L417.1 384.2L422.6 384.2Q425.9 384.2 428.2 382.7Q430.4 381.2 431.6 378.5Q432.9 375.9 432.9 372.6Z" fill="#FFFFFF"/></svg><circle cx="263" cy="251" r="1.8" fill="#3a4654"/><circle class="rp1" cx="263" cy="233" r="16" fill="none" stroke="#F26722" stroke-width="3"/><g class="menu"><rect x="196" y="96" width="140" height="112" rx="8" fill="#f6f7f8" stroke="#c9cfd6"/><rect class="hl" x="202" y="104" width="128" height="24" rx="5" fill="#2f7cf6"/><text x="214" y="120.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1a2430" class="hl-ink">Options</text><path d="M318 111l4 5-4 5" fill="none" stroke="#5f6b78" stroke-width="1.6"/><rect x="206" y="136" width="120" height="1" fill="#d6dbe0"/><text x="214" y="156" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#3a4654">Show All Windows</text><text x="214" y="178" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#3a4654">Hide</text><text x="214" y="199" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#3a4654">Quit</text></g><g class="menu2"><rect x="336" y="96" width="132" height="86" rx="8" fill="#f6f7f8" stroke="#c9cfd6"/><rect class="hl2" x="342" y="104" width="120" height="24" rx="5" fill="#2f7cf6"/><text x="354" y="120.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1a2430" class="hl2-ink">Keep in Dock</text><text x="354" y="146" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#3a4654">Open at Login</text><text x="354" y="168" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#3a4654">Show in Finder</text></g><circle class="rp2" cx="446" cy="116" r="14" fill="none" stroke="#F26722" stroke-width="3"/><g class="badge"><rect x="203" y="172" width="120" height="28" rx="14" fill="#157a33"/><text x="263" y="190.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" fill="#fff">Kept in Dock ✓</text></g><g class="cur"><path d="M0 0L0 23L6 18L10.5 27L14.5 25L10 16L18 16Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></g></g></svg><svg class="pin-scene" data-os="chromeos" viewBox="0 0 480 260" aria-hidden="true"><defs><linearGradient id="pin-sky-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8eff6"/><stop offset="1" stop-color="#c8d5e2"/></linearGradient></defs><defs><clipPath id="pin-clip-c"><rect width="480" height="260" rx="16"/></clipPath></defs><g clip-path="url(#pin-clip-c)"><rect width="480" height="260" fill="#dde6ef"/><rect width="480" height="260" fill="url(#pin-sky-c)"/><g><rect x="64" y="20" width="352" height="160" rx="9" fill="#fff"/><path d="M73 20h334a9 9 0 0 1 9 9v13H64V29a9 9 0 0 1 9-9z" fill="#003047"/><text x="80" y="35.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#fff">Community Connect</text><rect x="84" y="60" width="128" height="11" rx="5.5" fill="#d7e0e8"/><rect x="84" y="84" width="300" height="8" rx="4" fill="#edf1f5"/><rect x="84" y="100" width="262" height="8" rx="4" fill="#edf1f5"/><rect x="84" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/><rect x="186" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/><rect x="288" y="124" width="92" height="40" rx="7" fill="#f3f6f9"/></g><rect x="0" y="216" width="480" height="44" fill="#202124" opacity=".92"/><circle cx="24" cy="238" r="11" fill="none" stroke="#e8eaed" stroke-width="2.4"/><g transform="translate(176 227)"><circle cx="11" cy="11" r="11" fill="#e8eef5"/><circle cx="11" cy="11" r="4.5" fill="#4ba3f2"/></g><g transform="translate(212 227)"><rect width="22" height="22" rx="6" fill="#34a853"/><rect x="5" y="6" width="12" height="2.5" rx="1.2" fill="#fff"/><rect x="5" y="11" width="12" height="2.5" rx="1.2" fill="#fff"/></g><g transform="translate(248 227)"><rect width="22" height="22" rx="6" fill="#fbbc04"/></g><svg x="284" y="223" width="30" height="30" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M106.0 197.6L106.0 197.6Q106.0 183.2 111.3 169.4Q116.6 155.6 126.8 144.3Q137.0 133.0 151.6 126.2Q166.2 119.5 184.8 119.5L184.8 119.5Q207.0 119.5 223.2 129.0Q239.5 138.5 247.5 153.8L247.5 153.8L219.6 173.3Q216.0 164.9 210.2 160.2Q204.3 155.6 197.3 153.7Q190.4 151.8 183.9 151.8L183.9 151.8Q173.5 151.8 165.8 155.9Q158.0 160.0 152.9 166.8Q147.8 173.7 145.4 182.1Q143.0 190.5 143.0 198.9L143.0 198.9Q143.0 208.2 145.9 216.9Q148.7 225.5 154.2 232.2Q159.6 238.8 167.3 242.7Q175.1 246.6 184.4 246.6L184.4 246.6Q191.0 246.6 197.9 244.3Q204.7 242.1 210.6 237.4Q216.5 232.6 219.6 224.9L219.6 224.9L249.2 242.3Q244.6 253.9 234.0 262.0Q223.3 270.2 209.9 274.6Q196.6 278.9 183.5 278.9L183.5 278.9Q166.4 278.9 152.2 271.9Q137.9 264.9 127.6 253.3Q117.3 241.7 111.6 227.2Q106.0 212.7 106.0 197.6ZM262.8 197.6L262.8 197.6Q262.8 183.2 268.1 169.4Q273.4 155.6 283.6 144.3Q293.7 133.0 308.4 126.2Q323.0 119.5 341.6 119.5L341.6 119.5Q363.7 119.5 380.0 129.0Q396.3 138.5 404.2 153.8L404.2 153.8L376.3 173.3Q372.8 164.9 366.9 160.2Q361.1 155.6 354.1 153.7Q347.1 151.8 340.7 151.8L340.7 151.8Q330.3 151.8 322.5 155.9Q314.8 160.0 309.7 166.8Q304.6 173.7 302.2 182.1Q299.7 190.5 299.7 198.9L299.7 198.9Q299.7 208.2 302.6 216.9Q305.5 225.5 310.9 232.2Q316.3 238.8 324.1 242.7Q331.8 246.6 341.1 246.6L341.1 246.6Q347.8 246.6 354.6 244.3Q361.5 242.1 367.4 237.4Q373.2 232.6 376.3 224.9L376.3 224.9L406 242.3Q401.4 253.9 390.7 262.0Q380.1 270.2 366.7 274.6Q353.3 278.9 340.2 278.9L340.2 278.9Q323.2 278.9 308.9 271.9Q294.6 264.9 284.3 253.3Q274.0 241.7 268.4 227.2Q262.8 212.7 262.8 197.6Z" fill="#FFFFFF"/><rect x="196.0" y="308.9" width="120" height="14" rx="7" fill="#F26722"/><path d="M84.5 392.1L70.0 392.1L70.0 353.2L84.5 353.2Q90.9 353.2 95.2 355.8Q99.5 358.4 101.7 362.8Q103.9 367.2 103.9 372.6L103.9 372.6Q103.9 378.5 101.5 382.9Q99.1 387.3 94.7 389.7Q90.4 392.1 84.5 392.1L84.5 392.1ZM94.8 372.6L94.8 372.6Q94.8 369.2 93.6 366.6Q92.3 364.0 90.0 362.5Q87.7 361.1 84.5 361.1L84.5 361.1L79.0 361.1L79.0 384.2L84.5 384.2Q87.8 384.2 90.1 382.7Q92.3 381.2 93.6 378.5Q94.8 375.9 94.8 372.6ZM110.0 392.1L123.4 353.2L133.1 353.2L146.5 392.1L137.3 392.1L134.3 383.4L122.1 383.4L119.2 392.1L110.0 392.1ZM123.6 377.2L132.8 377.2L128.2 362.2L123.6 377.2ZM182.0 357.1L178.0 364.6Q177.9 364.3 176.9 363.7Q175.9 363.2 174.4 362.5Q172.9 361.9 171.2 361.4Q169.4 360.9 167.7 360.9L167.7 360.9Q165.4 360.9 164.1 361.7Q162.8 362.5 162.8 364.1L162.8 364.1Q162.8 365.4 163.8 366.2Q164.8 367.0 166.6 367.5Q168.4 368.1 171.0 368.9L171.0 368.9Q174.7 369.9 177.5 371.3Q180.2 372.7 181.7 374.8Q183.1 377.0 183.1 380.6L183.1 380.6Q183.1 383.9 181.9 386.2Q180.7 388.5 178.7 389.9Q176.6 391.3 174.0 391.9Q171.3 392.5 168.5 392.5L168.5 392.5Q165.7 392.5 162.7 392.0Q159.7 391.4 157.0 390.3Q154.2 389.2 151.9 387.7L151.9 387.7L155.9 379.9Q156.1 380.2 157.3 380.9Q158.5 381.6 160.3 382.4Q162.1 383.2 164.3 383.8Q166.5 384.4 168.7 384.4L168.7 384.4Q171.1 384.4 172.3 383.7Q173.5 382.9 173.5 381.5L173.5 381.5Q173.5 380.0 172.2 379.2Q171.0 378.4 168.9 377.7Q166.8 377.1 164.1 376.3L164.1 376.3Q160.5 375.2 158.2 373.8Q155.8 372.4 154.7 370.5Q153.6 368.5 153.6 365.5L153.6 365.5Q153.6 361.4 155.5 358.6Q157.5 355.8 160.8 354.3Q164.1 352.9 167.9 352.9L167.9 352.9Q170.7 352.9 173.2 353.5Q175.8 354.2 178.0 355.2Q180.2 356.2 182.0 357.1L182.0 357.1ZM217.2 353.2L226.2 353.2L226.2 392.1L217.2 392.1L217.2 376.2L201.7 376.2L201.7 392.1L192.8 392.1L192.8 353.2L201.7 353.2L201.7 368.3L217.2 368.3L217.2 353.2ZM270.2 382.1L270.2 382.1Q270.2 385.5 268.4 387.7Q266.7 389.9 263.6 391.0Q260.6 392.1 257.0 392.1L257.0 392.1L238.1 392.1L238.1 353.2L259.7 353.2Q262.4 353.2 264.4 354.7Q266.4 356.1 267.5 358.4Q268.6 360.7 268.6 363.2L268.6 363.2Q268.6 365.9 267.1 368.4Q265.7 370.9 263.0 372.2L263.0 372.2Q266.3 373.1 268.3 375.7Q270.2 378.2 270.2 382.1ZM261.1 380.3L261.1 380.3Q261.1 379.1 260.6 378.1Q260.1 377.1 259.3 376.6Q258.5 376.0 257.4 376.0L257.4 376.0L247.0 376.0L247.0 384.5L257.0 384.5Q258.2 384.5 259.1 383.9Q260.0 383.4 260.5 382.5Q261.1 381.5 261.1 380.3ZM256.2 360.9L247.0 360.9L247.0 368.9L255.9 368.9Q256.8 368.9 257.7 368.5Q258.5 368.0 259.1 367.1Q259.6 366.2 259.6 364.9L259.6 364.9Q259.6 363.6 259.2 362.7Q258.7 361.8 257.9 361.3Q257.2 360.9 256.2 360.9L256.2 360.9ZM296.9 392.4L296.9 392.4Q292.6 392.4 289.0 390.8Q285.5 389.1 283.0 386.3Q280.4 383.4 279.0 379.9Q277.7 376.4 277.7 372.6L277.7 372.6Q277.7 368.7 279.1 365.2Q280.6 361.7 283.2 358.9Q285.8 356.2 289.3 354.6Q292.9 353.0 297.1 353.0L297.1 353.0Q301.4 353.0 305.0 354.7Q308.5 356.3 311.1 359.2Q313.6 362.0 315.0 365.6Q316.3 369.1 316.3 372.8L316.3 372.8Q316.3 376.6 314.9 380.2Q313.5 383.7 310.9 386.4Q308.2 389.2 304.7 390.8Q301.2 392.4 296.9 392.4ZM286.8 372.7L286.8 372.7Q286.8 375.0 287.5 377.1Q288.1 379.2 289.4 380.8Q290.7 382.5 292.6 383.4Q294.5 384.4 297.0 384.4L297.0 384.4Q299.6 384.4 301.5 383.4Q303.4 382.4 304.7 380.7Q305.9 379.0 306.6 376.9Q307.2 374.8 307.2 372.6L307.2 372.6Q307.2 370.3 306.5 368.3Q305.9 366.2 304.6 364.5Q303.2 362.8 301.3 361.9Q299.4 361.0 297.0 361.0L297.0 361.0Q294.4 361.0 292.5 362.0Q290.6 363.0 289.4 364.6Q288.1 366.3 287.4 368.4Q286.8 370.5 286.8 372.7ZM322.3 392.1L335.7 353.2L345.4 353.2L358.8 392.1L349.6 392.1L346.6 383.4L334.5 383.4L331.5 392.1L322.3 392.1ZM335.9 377.2L345.1 377.2L340.6 362.2L335.9 377.2ZM376.0 392.1L367.0 392.1L367.0 353.2L384.5 353.2Q387.3 353.2 389.6 354.3Q391.9 355.4 393.6 357.3Q395.3 359.2 396.3 361.6Q397.2 363.9 397.2 366.4L397.2 366.4Q397.2 368.8 396.5 370.9Q395.7 373.1 394.3 374.8Q392.9 376.5 390.9 377.6L390.9 377.6L399.4 392.1L389.5 392.1L382.1 379.6L376.0 379.6L376.0 392.1ZM376.0 361.1L376.0 371.7L384.2 371.7Q385.3 371.7 386.2 371.0Q387.0 370.3 387.6 369.1Q388.1 367.9 388.1 366.4L388.1 366.4Q388.1 364.8 387.5 363.6Q386.8 362.4 385.9 361.7Q385.0 361.1 383.9 361.1L383.9 361.1L376.0 361.1ZM422.6 392.1L408.1 392.1L408.1 353.2L422.6 353.2Q429.0 353.2 433.3 355.8Q437.6 358.4 439.8 362.8Q442 367.2 442 372.6L442 372.6Q442 378.5 439.6 382.9Q437.2 387.3 432.8 389.7Q428.5 392.1 422.6 392.1L422.6 392.1ZM432.9 372.6L432.9 372.6Q432.9 369.2 431.6 366.6Q430.4 364.0 428.1 362.5Q425.8 361.1 422.6 361.1L422.6 361.1L417.1 361.1L417.1 384.2L422.6 384.2Q425.9 384.2 428.2 382.7Q430.4 381.2 431.6 378.5Q432.9 375.9 432.9 372.6Z" fill="#FFFFFF"/></svg><circle cx="299" cy="256.5" r="2" fill="#e8eaed"/><circle class="rp1" cx="299" cy="238" r="16" fill="none" stroke="#F26722" stroke-width="3"/><g class="menu"><rect x="246" y="112" width="150" height="96" rx="10" fill="#fff" stroke="#d3d8de"/><text x="264" y="136" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#3c4043">New window</text><rect class="hl" x="252" y="146" width="138" height="26" rx="6" fill="#e3ecf7"/><text x="264" y="164" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" fill="#1a2430">Pin</text><text x="264" y="192" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#3c4043">Close</text></g><circle class="rp2" cx="352" cy="159" r="14" fill="none" stroke="#F26722" stroke-width="3"/><g class="badge"><rect x="249" y="178" width="100" height="28" rx="14" fill="#157a33"/><text x="299" y="196.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" fill="#fff">Pinned ✓</text></g><g class="cur"><path d="M0 0L0 23L6 18L10.5 27L14.5 25L10 16L18 16Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></g></g></svg>
+    <ol class="pin-steps" id="pin-steps"></ol>
+    <button class="btn" id="pin-done" type="button">Done, open the dashboard</button>
+  </section>
+
+  <p class="setup" id="setup" hidden><b>Not set up yet.</b> Open <code>index.html</code> and paste the dashboard’s link (it ends in
+    <code>/exec</code>) on the line that starts with <code>var DASHBOARD</code>.</p>
+
+  <section class="card" aria-labelledby="title">
+    <svg class="appicon" viewBox="0 0 512 512" role="img" aria-label="The Community Connect icon: CC DASHBOARD"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M106.0 197.6L106.0 197.6Q106.0 183.2 111.3 169.4Q116.6 155.6 126.8 144.3Q137.0 133.0 151.6 126.2Q166.2 119.5 184.8 119.5L184.8 119.5Q207.0 119.5 223.2 129.0Q239.5 138.5 247.5 153.8L247.5 153.8L219.6 173.3Q216.0 164.9 210.2 160.2Q204.3 155.6 197.3 153.7Q190.4 151.8 183.9 151.8L183.9 151.8Q173.5 151.8 165.8 155.9Q158.0 160.0 152.9 166.8Q147.8 173.7 145.4 182.1Q143.0 190.5 143.0 198.9L143.0 198.9Q143.0 208.2 145.9 216.9Q148.7 225.5 154.2 232.2Q159.6 238.8 167.3 242.7Q175.1 246.6 184.4 246.6L184.4 246.6Q191.0 246.6 197.9 244.3Q204.7 242.1 210.6 237.4Q216.5 232.6 219.6 224.9L219.6 224.9L249.2 242.3Q244.6 253.9 234.0 262.0Q223.3 270.2 209.9 274.6Q196.6 278.9 183.5 278.9L183.5 278.9Q166.4 278.9 152.2 271.9Q137.9 264.9 127.6 253.3Q117.3 241.7 111.6 227.2Q106.0 212.7 106.0 197.6ZM262.8 197.6L262.8 197.6Q262.8 183.2 268.1 169.4Q273.4 155.6 283.6 144.3Q293.7 133.0 308.4 126.2Q323.0 119.5 341.6 119.5L341.6 119.5Q363.7 119.5 380.0 129.0Q396.3 138.5 404.2 153.8L404.2 153.8L376.3 173.3Q372.8 164.9 366.9 160.2Q361.1 155.6 354.1 153.7Q347.1 151.8 340.7 151.8L340.7 151.8Q330.3 151.8 322.5 155.9Q314.8 160.0 309.7 166.8Q304.6 173.7 302.2 182.1Q299.7 190.5 299.7 198.9L299.7 198.9Q299.7 208.2 302.6 216.9Q305.5 225.5 310.9 232.2Q316.3 238.8 324.1 242.7Q331.8 246.6 341.1 246.6L341.1 246.6Q347.8 246.6 354.6 244.3Q361.5 242.1 367.4 237.4Q373.2 232.6 376.3 224.9L376.3 224.9L406 242.3Q401.4 253.9 390.7 262.0Q380.1 270.2 366.7 274.6Q353.3 278.9 340.2 278.9L340.2 278.9Q323.2 278.9 308.9 271.9Q294.6 264.9 284.3 253.3Q274.0 241.7 268.4 227.2Q262.8 212.7 262.8 197.6Z" fill="#FFFFFF"/><rect x="196.0" y="308.9" width="120" height="14" rx="7" fill="#F26722"/><path d="M84.5 392.1L70.0 392.1L70.0 353.2L84.5 353.2Q90.9 353.2 95.2 355.8Q99.5 358.4 101.7 362.8Q103.9 367.2 103.9 372.6L103.9 372.6Q103.9 378.5 101.5 382.9Q99.1 387.3 94.7 389.7Q90.4 392.1 84.5 392.1L84.5 392.1ZM94.8 372.6L94.8 372.6Q94.8 369.2 93.6 366.6Q92.3 364.0 90.0 362.5Q87.7 361.1 84.5 361.1L84.5 361.1L79.0 361.1L79.0 384.2L84.5 384.2Q87.8 384.2 90.1 382.7Q92.3 381.2 93.6 378.5Q94.8 375.9 94.8 372.6ZM110.0 392.1L123.4 353.2L133.1 353.2L146.5 392.1L137.3 392.1L134.3 383.4L122.1 383.4L119.2 392.1L110.0 392.1ZM123.6 377.2L132.8 377.2L128.2 362.2L123.6 377.2ZM182.0 357.1L178.0 364.6Q177.9 364.3 176.9 363.7Q175.9 363.2 174.4 362.5Q172.9 361.9 171.2 361.4Q169.4 360.9 167.7 360.9L167.7 360.9Q165.4 360.9 164.1 361.7Q162.8 362.5 162.8 364.1L162.8 364.1Q162.8 365.4 163.8 366.2Q164.8 367.0 166.6 367.5Q168.4 368.1 171.0 368.9L171.0 368.9Q174.7 369.9 177.5 371.3Q180.2 372.7 181.7 374.8Q183.1 377.0 183.1 380.6L183.1 380.6Q183.1 383.9 181.9 386.2Q180.7 388.5 178.7 389.9Q176.6 391.3 174.0 391.9Q171.3 392.5 168.5 392.5L168.5 392.5Q165.7 392.5 162.7 392.0Q159.7 391.4 157.0 390.3Q154.2 389.2 151.9 387.7L151.9 387.7L155.9 379.9Q156.1 380.2 157.3 380.9Q158.5 381.6 160.3 382.4Q162.1 383.2 164.3 383.8Q166.5 384.4 168.7 384.4L168.7 384.4Q171.1 384.4 172.3 383.7Q173.5 382.9 173.5 381.5L173.5 381.5Q173.5 380.0 172.2 379.2Q171.0 378.4 168.9 377.7Q166.8 377.1 164.1 376.3L164.1 376.3Q160.5 375.2 158.2 373.8Q155.8 372.4 154.7 370.5Q153.6 368.5 153.6 365.5L153.6 365.5Q153.6 361.4 155.5 358.6Q157.5 355.8 160.8 354.3Q164.1 352.9 167.9 352.9L167.9 352.9Q170.7 352.9 173.2 353.5Q175.8 354.2 178.0 355.2Q180.2 356.2 182.0 357.1L182.0 357.1ZM217.2 353.2L226.2 353.2L226.2 392.1L217.2 392.1L217.2 376.2L201.7 376.2L201.7 392.1L192.8 392.1L192.8 353.2L201.7 353.2L201.7 368.3L217.2 368.3L217.2 353.2ZM270.2 382.1L270.2 382.1Q270.2 385.5 268.4 387.7Q266.7 389.9 263.6 391.0Q260.6 392.1 257.0 392.1L257.0 392.1L238.1 392.1L238.1 353.2L259.7 353.2Q262.4 353.2 264.4 354.7Q266.4 356.1 267.5 358.4Q268.6 360.7 268.6 363.2L268.6 363.2Q268.6 365.9 267.1 368.4Q265.7 370.9 263.0 372.2L263.0 372.2Q266.3 373.1 268.3 375.7Q270.2 378.2 270.2 382.1ZM261.1 380.3L261.1 380.3Q261.1 379.1 260.6 378.1Q260.1 377.1 259.3 376.6Q258.5 376.0 257.4 376.0L257.4 376.0L247.0 376.0L247.0 384.5L257.0 384.5Q258.2 384.5 259.1 383.9Q260.0 383.4 260.5 382.5Q261.1 381.5 261.1 380.3ZM256.2 360.9L247.0 360.9L247.0 368.9L255.9 368.9Q256.8 368.9 257.7 368.5Q258.5 368.0 259.1 367.1Q259.6 366.2 259.6 364.9L259.6 364.9Q259.6 363.6 259.2 362.7Q258.7 361.8 257.9 361.3Q257.2 360.9 256.2 360.9L256.2 360.9ZM296.9 392.4L296.9 392.4Q292.6 392.4 289.0 390.8Q285.5 389.1 283.0 386.3Q280.4 383.4 279.0 379.9Q277.7 376.4 277.7 372.6L277.7 372.6Q277.7 368.7 279.1 365.2Q280.6 361.7 283.2 358.9Q285.8 356.2 289.3 354.6Q292.9 353.0 297.1 353.0L297.1 353.0Q301.4 353.0 305.0 354.7Q308.5 356.3 311.1 359.2Q313.6 362.0 315.0 365.6Q316.3 369.1 316.3 372.8L316.3 372.8Q316.3 376.6 314.9 380.2Q313.5 383.7 310.9 386.4Q308.2 389.2 304.7 390.8Q301.2 392.4 296.9 392.4ZM286.8 372.7L286.8 372.7Q286.8 375.0 287.5 377.1Q288.1 379.2 289.4 380.8Q290.7 382.5 292.6 383.4Q294.5 384.4 297.0 384.4L297.0 384.4Q299.6 384.4 301.5 383.4Q303.4 382.4 304.7 380.7Q305.9 379.0 306.6 376.9Q307.2 374.8 307.2 372.6L307.2 372.6Q307.2 370.3 306.5 368.3Q305.9 366.2 304.6 364.5Q303.2 362.8 301.3 361.9Q299.4 361.0 297.0 361.0L297.0 361.0Q294.4 361.0 292.5 362.0Q290.6 363.0 289.4 364.6Q288.1 366.3 287.4 368.4Q286.8 370.5 286.8 372.7ZM322.3 392.1L335.7 353.2L345.4 353.2L358.8 392.1L349.6 392.1L346.6 383.4L334.5 383.4L331.5 392.1L322.3 392.1ZM335.9 377.2L345.1 377.2L340.6 362.2L335.9 377.2ZM376.0 392.1L367.0 392.1L367.0 353.2L384.5 353.2Q387.3 353.2 389.6 354.3Q391.9 355.4 393.6 357.3Q395.3 359.2 396.3 361.6Q397.2 363.9 397.2 366.4L397.2 366.4Q397.2 368.8 396.5 370.9Q395.7 373.1 394.3 374.8Q392.9 376.5 390.9 377.6L390.9 377.6L399.4 392.1L389.5 392.1L382.1 379.6L376.0 379.6L376.0 392.1ZM376.0 361.1L376.0 371.7L384.2 371.7Q385.3 371.7 386.2 371.0Q387.0 370.3 387.6 369.1Q388.1 367.9 388.1 366.4L388.1 366.4Q388.1 364.8 387.5 363.6Q386.8 362.4 385.9 361.7Q385.0 361.1 383.9 361.1L383.9 361.1L376.0 361.1ZM422.6 392.1L408.1 392.1L408.1 353.2L422.6 353.2Q429.0 353.2 433.3 355.8Q437.6 358.4 439.8 362.8Q442 367.2 442 372.6L442 372.6Q442 378.5 439.6 382.9Q437.2 387.3 432.8 389.7Q428.5 392.1 422.6 392.1L422.6 392.1ZM432.9 372.6L432.9 372.6Q432.9 369.2 431.6 366.6Q430.4 364.0 428.1 362.5Q425.8 361.1 422.6 361.1L422.6 361.1L417.1 361.1L417.1 384.2L422.6 384.2Q425.9 384.2 428.2 382.7Q430.4 381.2 431.6 378.5Q432.9 375.9 432.9 372.6Z" fill="#FFFFFF"/></svg>
+    <h1 id="title">Put Community Connect on your computer</h1>
+    <p class="lead" id="lead">Click the button once. The dashboard gets its own icon, like any other app, so next time you just
+      click the icon. No link to look for.</p>
+
+    <div id="states" aria-live="polite">
+      <div data-state="bar">
+        <div class="bm">
+          <svg class="bar-scene" viewBox="0 0 480 260" aria-hidden="true" focusable="false"><defs><clipPath id="bar-clip"><rect width="480" height="260" rx="16"/></clipPath><symbol id="bm-cc" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M76 228.1L76 228.1Q76 210.9 82.4 194.3Q88.8 177.7 101.0 164.1Q113.2 150.6 130.7 142.5Q148.3 134.4 170.6 134.4L170.6 134.4Q197.2 134.4 216.7 145.8Q236.2 157.2 245.8 175.5L245.8 175.5L212.3 198.9Q208.0 188.8 201.0 183.2Q194.0 177.7 185.6 175.4Q177.2 173.1 169.5 173.1L169.5 173.1Q157.0 173.1 147.7 178.1Q138.4 183.0 132.3 191.2Q126.2 199.4 123.3 209.5Q120.4 219.6 120.4 229.7L120.4 229.7Q120.4 240.9 123.8 251.3Q127.3 261.6 133.8 269.6Q140.3 277.6 149.6 282.2Q158.9 286.9 170.1 286.9L170.1 286.9Q178.0 286.9 186.3 284.2Q194.5 281.5 201.5 275.8Q208.6 270.1 212.3 260.8L212.3 260.8L247.9 281.8Q242.3 295.6 229.6 305.5Q216.8 315.3 200.7 320.5Q184.7 325.6 169.0 325.6L169.0 325.6Q148.5 325.6 131.4 317.3Q114.3 308.9 101.9 295.0Q89.5 281.0 82.8 263.6Q76 246.2 76 228.1ZM264.1 228.1L264.1 228.1Q264.1 210.9 270.5 194.3Q276.9 177.7 289.1 164.1Q301.3 150.6 318.8 142.5Q336.4 134.4 358.7 134.4L358.7 134.4Q385.3 134.4 404.8 145.8Q424.3 157.2 433.9 175.5L433.9 175.5L400.4 198.9Q396.1 188.8 389.1 183.2Q382.1 177.7 373.7 175.4Q365.3 173.1 357.6 173.1L357.6 173.1Q345.1 173.1 335.8 178.1Q326.5 183.0 320.4 191.2Q314.3 199.4 311.4 209.5Q308.5 219.6 308.5 229.7L308.5 229.7Q308.5 240.9 311.9 251.3Q315.4 261.6 321.9 269.6Q328.4 277.6 337.7 282.2Q347.0 286.9 358.2 286.9L358.2 286.9Q366.1 286.9 374.4 284.2Q382.6 281.5 389.6 275.8Q396.7 270.1 400.4 260.8L400.4 260.8L436 281.8Q430.4 295.6 417.7 305.5Q404.9 315.3 388.8 320.5Q372.8 325.6 357.1 325.6L357.1 325.6Q336.6 325.6 319.5 317.3Q302.4 308.9 290.0 295.0Q277.7 281.0 270.9 263.6Q264.1 246.2 264.1 228.1Z" fill="#FFFFFF"/><rect x="171.0" y="359.6" width="170" height="30" rx="15" fill="#F26722"/></symbol></defs><g clip-path="url(#bar-clip)"><rect width="480" height="260" fill="#dee3ea"/><g class="os-pc"><path d="M10 34v-20a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8v20z" fill="#fff"/><use href="#bm-cc" x="21" y="13" width="14" height="14"/><text x="41" y="24.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1a2430">Community Connect</text><path d="M167 16.5l7 7m0-7l-7 7" stroke="#5f6b78" stroke-width="1.4" stroke-linecap="round"/><path d="M200 20h10m-5-5v10" stroke="#5f6b78" stroke-width="1.6" stroke-linecap="round"/><g stroke="#5f6b78" stroke-width="1.4" fill="none"><path d="M404 18h10"/><rect x="428" y="13.5" width="9" height="9" rx="1"/><path d="M451 13.5l9 9m0-9l-9 9"/></g></g><g class="os-mac"><circle cx="18" cy="18" r="5.5" fill="#ff5f57"/><circle cx="34" cy="18" r="5.5" fill="#febc2e"/><circle cx="50" cy="18" r="5.5" fill="#28c840"/><path d="M70 34v-20a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8v20z" fill="#fff"/><use href="#bm-cc" x="81" y="13" width="14" height="14"/><text x="101" y="24.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1a2430">Community Connect</text><path d="M227 16.5l7 7m0-7l-7 7" stroke="#5f6b78" stroke-width="1.4" stroke-linecap="round"/><path d="M260 20h10m-5-5v10" stroke="#5f6b78" stroke-width="1.6" stroke-linecap="round"/></g><rect y="34" width="480" height="34" fill="#fff"/><path d="M23 45l-6 6 6 6M17 51h13" fill="none" stroke="#5f6b78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 45l6 6-6 6M54 51H41" fill="none" stroke="#b6bfc9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M77.2 48.6A5.6 5.6 0 1 0 77.6 53.6M77.6 44.6v4.4h-4.4" fill="none" stroke="#5f6b78" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><rect x="90" y="40" width="340" height="22" rx="11" fill="#eef1f4"/><circle cx="104" cy="51" r="4.2" fill="none" stroke="#5f6b78" stroke-width="1.5"/><rect x="116" y="48.5" width="118" height="5" rx="2.5" fill="#b9c3cd"/><path d="M414 44.6l1.9 3.9 4.3.6-3.1 3 .7 4.3-3.8-2-3.8 2 .7-4.3-3.1-3 4.3-.6z" fill="none" stroke="#5f6b78" stroke-width="1.3" stroke-linejoin="round"/><circle cx="448" cy="51" r="8" fill="#c6d4e1"/><g fill="#5f6b78"><circle cx="467" cy="46" r="1.5"/><circle cx="467" cy="51" r="1.5"/><circle cx="467" cy="56" r="1.5"/></g><g class="pg"><rect y="68" width="480" height="230" fill="#f5f7f9"/><rect x="110" y="88" width="260" height="170" rx="10" fill="#fff" stroke="#e5e7eb"/><rect x="170" y="103" width="140" height="9" rx="4.5" fill="#c9d6e2"/><circle cx="138" cy="132" r="6" fill="#003047"/><rect x="152" y="129.5" width="150" height="5" rx="2.5" fill="#e3e9ef"/><circle cx="138" cy="156" r="6" fill="#003047"/><rect x="152" y="153.5" width="124" height="5" rx="2.5" fill="#e3e9ef"/><g class="src"><rect x="150" y="166" width="132" height="30" rx="8" fill="#fff" stroke="#003047" stroke-width="1.6" stroke-dasharray="4 3"/><use href="#bm-cc" x="160" y="173" width="16" height="16"/><text x="182" y="185.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#003047">CC Dashboard</text></g><circle cx="138" cy="216" r="6" fill="#003047"/><rect x="152" y="213.5" width="132" height="5" rx="2.5" fill="#e3e9ef"/></g><g class="bmbar"><rect y="68" width="480" height="26" fill="#fff"/><rect y="93" width="480" height="1" fill="#e3e7eb"/><g class="bm-old"><circle cx="20" cy="81" r="5" fill="#8ab4f8"/><rect x="30" y="78.5" width="40" height="5" rx="2.5" fill="#c3ccd5"/><circle cx="92" cy="81" r="5" fill="#f6ae2d"/><rect x="102" y="78.5" width="48" height="5" rx="2.5" fill="#c3ccd5"/><circle cx="172" cy="81" r="5" fill="#81c995"/><rect x="182" y="78.5" width="36" height="5" rx="2.5" fill="#c3ccd5"/></g><rect class="bm-hover" x="7" y="71" width="108" height="20" rx="10" fill="#e3ebf4"/><g class="bm-new"><use href="#bm-cc" x="14" y="74" width="14" height="14"/><text x="33" y="85.2" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#1a2430">CC Dashboard</text></g><rect class="bm-drop" x="6" y="72" width="2.5" height="18" rx="1.25" fill="#1a73e8"/></g><circle class="brp1" cx="178" cy="205" r="13" fill="none" stroke="#F26722" stroke-width="3"/><circle class="brp2" cx="58" cy="81" r="12" fill="none" stroke="#F26722" stroke-width="3"/><g class="ghost"><rect x="150" y="192" width="132" height="30" rx="8" fill="#fff" stroke="#003047" stroke-width="1.6" stroke-dasharray="4 3"/><use href="#bm-cc" x="160" y="199" width="16" height="16"/><text x="182" y="211.5" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#003047">CC Dashboard</text></g><g class="keys"><g class="os-pc"><rect x="113" y="114" width="254" height="68" rx="20" fill="#0b2a3d" fill-opacity=".93"/><g><rect x="129" y="131" width="62" height="40" rx="8" fill="#9fb0c0"/><g class="kt"><rect x="129" y="128" width="62" height="40" rx="8" fill="#fff"/><text x="160" y="153.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#1a2430">Ctrl</text></g></g><text x="202" y="156" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#fff">+</text><g><rect x="213" y="131" width="70" height="40" rx="8" fill="#9fb0c0"/><g class="kt"><rect x="213" y="128" width="70" height="40" rx="8" fill="#fff"/><text x="248" y="153.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#1a2430">Shift</text></g></g><text x="294" y="156" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#fff">+</text><g><rect x="305" y="131" width="46" height="40" rx="8" fill="#9fb0c0"/><g class="kt"><rect x="305" y="128" width="46" height="40" rx="8" fill="#fff"/><text x="328" y="153.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#1a2430">B</text></g></g></g><g class="os-mac"><rect x="121" y="114" width="238" height="68" rx="20" fill="#0b2a3d" fill-opacity=".93"/><g><rect x="137" y="131" width="46" height="40" rx="8" fill="#9fb0c0"/><g class="kt"><rect x="137" y="128" width="46" height="40" rx="8" fill="#fff"/><text x="160" y="153.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#1a2430">⌘</text></g></g><text x="194" y="156" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#fff">+</text><g><rect x="205" y="131" width="70" height="40" rx="8" fill="#9fb0c0"/><g class="kt"><rect x="205" y="128" width="70" height="40" rx="8" fill="#fff"/><text x="240" y="153.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#1a2430">Shift</text></g></g><text x="286" y="156" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#fff">+</text><g><rect x="297" y="131" width="46" height="40" rx="8" fill="#9fb0c0"/><g class="kt"><rect x="297" y="128" width="46" height="40" rx="8" fill="#fff"/><text x="320" y="153.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#1a2430">B</text></g></g></g></g><g class="bbadge"><rect x="120" y="102" width="138" height="26" rx="13" fill="#157a33"/><text x="189" y="119.5" text-anchor="middle" font-family="Raleway, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#fff">One click away ✓</text></g><g class="bcur"><path d="M0 0L0 23L6 18L10.5 27L14.5 25L10 16L18 16Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></g></g></svg>
+          <ol class="bm-steps">
+            <li class="bm-step now" id="bm-1"><span class="bm-n" aria-hidden="true">1</span><div>
+              <p class="bm-t">Press <kbd class="k-mod">Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></p>
+              <p class="bm-sub">It shows your <span class="bm-name">bookmarks bar</span>, under the address bar. Already see it? Skip this.</p></div></li>
+            <li class="bm-step" id="bm-2"><span class="bm-n" aria-hidden="true">2</span><div>
+              <p class="bm-t">Drag this button up to the left end of the bar</p>
+              <a class="bm-btn" id="bm-link" href="?go=1" draggable="true"><svg class="bm-grip" viewBox="0 0 10 18" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="2" cy="3" r="1.6"/><circle cx="8" cy="3" r="1.6"/><circle cx="2" cy="9" r="1.6"/><circle cx="8" cy="9" r="1.6"/><circle cx="2" cy="15" r="1.6"/><circle cx="8" cy="15" r="1.6"/></g></svg><svg class="bm-ic" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#003047"/><path d="M76 228.1L76 228.1Q76 210.9 82.4 194.3Q88.8 177.7 101.0 164.1Q113.2 150.6 130.7 142.5Q148.3 134.4 170.6 134.4L170.6 134.4Q197.2 134.4 216.7 145.8Q236.2 157.2 245.8 175.5L245.8 175.5L212.3 198.9Q208.0 188.8 201.0 183.2Q194.0 177.7 185.6 175.4Q177.2 173.1 169.5 173.1L169.5 173.1Q157.0 173.1 147.7 178.1Q138.4 183.0 132.3 191.2Q126.2 199.4 123.3 209.5Q120.4 219.6 120.4 229.7L120.4 229.7Q120.4 240.9 123.8 251.3Q127.3 261.6 133.8 269.6Q140.3 277.6 149.6 282.2Q158.9 286.9 170.1 286.9L170.1 286.9Q178.0 286.9 186.3 284.2Q194.5 281.5 201.5 275.8Q208.6 270.1 212.3 260.8L212.3 260.8L247.9 281.8Q242.3 295.6 229.6 305.5Q216.8 315.3 200.7 320.5Q184.7 325.6 169.0 325.6L169.0 325.6Q148.5 325.6 131.4 317.3Q114.3 308.9 101.9 295.0Q89.5 281.0 82.8 263.6Q76 246.2 76 228.1ZM264.1 228.1L264.1 228.1Q264.1 210.9 270.5 194.3Q276.9 177.7 289.1 164.1Q301.3 150.6 318.8 142.5Q336.4 134.4 358.7 134.4L358.7 134.4Q385.3 134.4 404.8 145.8Q424.3 157.2 433.9 175.5L433.9 175.5L400.4 198.9Q396.1 188.8 389.1 183.2Q382.1 177.7 373.7 175.4Q365.3 173.1 357.6 173.1L357.6 173.1Q345.1 173.1 335.8 178.1Q326.5 183.0 320.4 191.2Q314.3 199.4 311.4 209.5Q308.5 219.6 308.5 229.7L308.5 229.7Q308.5 240.9 311.9 251.3Q315.4 261.6 321.9 269.6Q328.4 277.6 337.7 282.2Q347.0 286.9 358.2 286.9L358.2 286.9Q366.1 286.9 374.4 284.2Q382.6 281.5 389.6 275.8Q396.7 270.1 400.4 260.8L400.4 260.8L436 281.8Q430.4 295.6 417.7 305.5Q404.9 315.3 388.8 320.5Q372.8 325.6 357.1 325.6L357.1 325.6Q336.6 325.6 319.5 317.3Q302.4 308.9 290.0 295.0Q277.7 281.0 270.9 263.6Q264.1 246.2 264.1 228.1Z" fill="#FFFFFF"/><rect x="171.0" y="359.6" width="170" height="30" rx="15" fill="#F26722"/></svg><span>CC Dashboard</span></a><span class="bm-up" aria-hidden="true">↑</span></div></li>
+            <li class="bm-step" id="bm-3"><span class="bm-n" aria-hidden="true">3</span><div>
+              <p class="bm-t">Click <b>CC Dashboard</b> on the bar</p>
+              <p class="bm-sub">It opens the dashboard, today and any day.</p></div></li>
+          </ol>
+        </div>
+        <p class="bm-say" id="bm-say" role="status"></p>
+      </div>
+
+      <div data-state="ready">
+        <button class="btn" id="add" type="button">Add to my computer</button>
+        <p class="small" id="confirm">Your browser asks you to confirm: click <b>Install</b>.</p>
+        <p class="small" id="again" hidden>No problem. When you’re ready, reload this page and click the button again.</p>
+      </div>
+
+      <div data-state="ios" hidden>
+        <ol class="steps">
+          <li>Tap the <b>Share</b> button
+            <svg width="16" height="20" viewBox="0 0 16 20" aria-label="(the square with an arrow pointing up)" role="img" style="vertical-align:-3px"><path d="M8 1v11M4 5l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8H2.5v10.5h11V8H11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>.</li>
+          <li>Tap <b>Add to Home Screen</b> (scroll down if you don’t see it), then <b>Add</b>.</li>
+        </ol>
+      </div>
+
+      <div data-state="safari" hidden>
+        <p class="say">In the menu bar at the top of the screen, choose <b>File</b>, then <b>Add to Dock</b>.</p>
+      </div>
+
+      <div data-state="open" hidden>
+        <a class="btn" id="open-big" href="#">Open the dashboard</a>
+        <p class="small" id="open-hint" hidden></p>
+      </div>
+
+      <div data-state="done" hidden>
+        <p class="ok">Done. It’s on your computer.</p>
+        <p class="say">Look for the icon above: it opens the dashboard. <span id="where"></span></p>
+        <a class="btn" id="open-now" href="#">Open Community Connect</a>
+      </div>
+    </div>
+
+    <p class="alt" id="alt"><a id="bar-link" href="#" hidden>Put it on your bookmarks bar</a><a id="app-link" href="#" hidden>Add it as an app instead</a><a id="open" href="#">Not now, just open the dashboard</a></p>
+  </section>
+
+  <p class="foot">This page only opens the dashboard. You sign in with your work Google account as usual.</p>
+  <noscript><p class="setup">This page needs JavaScript turned on.</p></noscript>
+</main>
+
+<script>
+/* Leaves for the dashboard once the opening screen is on the screen, so the window shows "Opening Community Connect…"
+   (not a blank one) while the dashboard loads. If it's slow, it says so; if it's very slow, it offers to try again. */
+(function () {
+  var html = document.documentElement;
+  window.CC.leave = function (url, replace) {
+    if (!/\bgoing\b/.test(html.className)) html.className += ' going';
+    var gone = false, again = document.getElementById('going-again');
+    if (again) again.href = url;
+    var go = function () { if (gone) return; gone = true; if (replace) location.replace(url); else location.assign(url); };
+    if (window.requestAnimationFrame) requestAnimationFrame(function () { requestAnimationFrame(go); });
+    setTimeout(go, 300);
+    setTimeout(function () { document.getElementById('going-slow').hidden = false; }, window.CC_SLOW_MS || 6000);
+    setTimeout(function () { document.getElementById('going-stuck').hidden = false; }, window.CC_STUCK_MS || 30000);
+  };
+  if (window.CC.going) window.CC.leave(window.CC.going, true);
+  if (window.CC.pin) {
+    var os = html.getAttribute('data-os');
+    var say = {
+      windows: ['Last step: keep it on your taskbar', 'So it’s always one click away.',
+        ['Find <b>CC DASHBOARD</b> on your taskbar, at the bottom of your screen.', 'Right-click it.', 'Choose <b>Pin to taskbar</b>.']],
+      mac: ['Last step: keep it in your Dock', 'So it’s always one click away.',
+        ['Find <b>CC DASHBOARD</b> in your Dock, at the bottom of your screen.', 'Right-click it (or hold Control and click).', 'Choose <b>Options</b>, then <b>Keep in Dock</b>.']],
+      chromeos: ['Last step: keep it on your shelf', 'So it’s always one click away.',
+        ['Find <b>CC DASHBOARD</b> on the shelf at the bottom of your screen.', 'Right-click it.', 'Choose <b>Pin</b>.']]
+    }[os];
+    document.getElementById('pin-h').textContent = say[0];
+    document.getElementById('pin-sub').textContent = say[1];
+    document.getElementById('pin-steps').innerHTML = say[2].map(function (x) { return '<li>' + x + '</li>'; }).join('');
+    document.getElementById('pin-done').addEventListener('click', function () {
+      try { localStorage.setItem('cc-pin-done', '1'); } catch (x) {}
+      html.className = html.className.replace(/\s*\bpinning\b/g, '');
+      window.CC.leave(withApp(DASHBOARD), true);
+    });
+  }
+  // Back to this page from the dashboard: the page, not a stale opening screen.
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted && !window.CC.going) {
+      html.className = html.className.replace(/\s*\bgoing\b/g, '');
+      document.getElementById('going-slow').hidden = true;
+      document.getElementById('going-stuck').hidden = true;
+    }
+  });
+})();
+</script>
+<script>
+(function () {
+  if (/\b(going|pinning)\b/.test(document.documentElement.className)) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var ok = window.CC && window.CC.ok;
+
+  if (!ok) $('setup').hidden = false;
+  if (ok) { $('open').href = DASHBOARD; $('open-now').href = withApp(DASHBOARD); }
+  else { $('open').removeAttribute('href'); $('open-now').removeAttribute('href'); $('alt').hidden = true; }
+  // Opening the dashboard from here shows the opening screen too, so a slow start doesn't look like a dead link.
+  $('open').addEventListener('click', function (e) { if (!ok) return; e.preventDefault(); window.CC.leave(DASHBOARD, false); });
+  $('open-now').addEventListener('click', function (e) { if (!ok) return; e.preventDefault(); window.CC.leave(withApp(DASHBOARD), false); });
+
+  var ua = navigator.userAgent, uad = navigator.userAgentData;
+  var plat = (uad && uad.platform) || navigator.platform || '';
+  var os = (/Android/i.test(ua) || /Android/i.test(plat)) ? 'android'
+    : (/iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(plat) && navigator.maxTouchPoints > 1)) ? 'ios'
+    : (/CrOS/i.test(ua) || /Chrome OS/i.test(plat)) ? 'chromeos'
+    : /Win/i.test(plat) ? 'windows' : /Mac/i.test(plat) ? 'mac' : 'other';
+  var brands = (uad && uad.brands) || [];
+  var chromium = !!brands.length || /Chrome\/|Chromium\/|Edg\//.test(ua);
+  var edge = /Edg\//.test(ua) || brands.some(function (b) { return /Edge/i.test(b.brand); });
+  var firefox = /Firefox\/|FxiOS\//.test(ua);
+  var safari = !chromium && !firefox && /Safari\//.test(ua);
+  // A computer (not a phone or tablet) has a bookmarks bar: there, that's the first thing offered.
+  var phone = os === 'ios' || os === 'android';
+  var computer = !phone && (os !== 'other' || !/Mobi|Tablet|Silk|Kindle/i.test(ua));
+  var barName = edge || safari ? 'favorites bar' : firefox ? 'bookmarks toolbar' : 'bookmarks bar';
+  var mod = os === 'mac' ? '⌘' : 'Ctrl';
+  var each = function (sel, f) { var all = document.querySelectorAll(sel); for (var i = 0; i < all.length; i++) f(all[i]); };
+  each('.bm-name', function (x) { x.textContent = barName; });
+  each('.k-mod', function (x) { x.textContent = mod; });
+  // The button people drag to the bar: this page with ?go=1, which goes straight to the dashboard. The bookmark keeps
+  // working if the dashboard's link ever changes (it changes here, on the DASHBOARD line), and is named CC Dashboard.
+  $('bm-link').href = location.href.split('#')[0].split('?')[0] + '?go=1';
+  $('app-link').textContent = safari ? 'Add it to your Dock instead' : 'Add it as an app instead';
+
+  if (os === 'ios' || os === 'android') {
+    $('title').textContent = 'Put Community Connect on your home screen';
+    $('lead').textContent = 'Do this once. The dashboard gets its own icon, like any other app, so next time you just tap it. No link to look for.';
+    $('add').textContent = 'Add to my home screen';
+  }
+  $('where').innerHTML = {
+    windows: 'It’s in your <b>Start</b> menu. To keep it on your taskbar, right-click its icon while it’s open and choose <b>Pin to taskbar</b>.',
+    mac: 'It’s in <b>Launchpad</b>. To keep it in your Dock, right-click its icon while it’s open, then choose <b>Options</b> and <b>Keep in Dock</b>.',
+    chromeos: 'It’s in your <b>launcher</b>. To keep it on your shelf, right-click its icon and choose <b>Pin</b>.',
+    android: 'It’s on your <b>home screen</b>.',
+    ios: 'It’s on your <b>home screen</b>.',
+    other: 'It’s with your other apps.'
+  }[os];
+
+  var TITLE = $('title').textContent, BAR_TITLE = 'Put Community Connect on your ' + barName;
+  var html = document.documentElement;
+  var installed = false, bm = false;
+  try { installed = localStorage.getItem('cc-installed') === '1'; bm = localStorage.getItem('cc-bm') === '1'; } catch (x) {}
+  var deferred = null, done = false, dismissed = false, wanted = false;
+  function shown() { return html.getAttribute('data-shown') || ''; }
+  function show(name) {
+    var all = document.querySelectorAll('[data-state]');
+    for (var i = 0; i < all.length; i++) all[i].hidden = all[i].getAttribute('data-state') !== name;
+    $('title').textContent = name === 'open' ? 'Open Community Connect' : name === 'bar' ? BAR_TITLE : TITLE;
+    $('lead').hidden = name === 'done' || name === 'open' || name === 'bar' || name === 'safari';
+    // Below: open the dashboard now; on the bar, the app instead (when this browser can add it); back to the bar.
+    $('open').hidden = name === 'done' || name === 'open' || !ok;
+    $('app-link').hidden = name !== 'bar' || !(deferred || (safari && os === 'mac'));
+    $('bar-link').hidden = !computer || (name !== 'open' && name !== 'safari');
+    $('alt').hidden = $('open').hidden && $('app-link').hidden && $('bar-link').hidden;
+    html.setAttribute('data-shown', name);
+  }
+  // Already one click away (the app is on this computer, or this page put it on the bar): one button that opens it.
+  function openOnly() {
+    // Deleting the desktop icon doesn't uninstall it (Chrome keeps it), so say where it still is.
+    var find = { windows: 'press the Windows key and type Community Connect', mac: 'press ⌘ and Space, then type Community Connect',
+      chromeos: 'search your apps for Community Connect', android: 'look for Community Connect on your home screen', ios: 'look for Community Connect on your home screen',
+      other: 'look for Community Connect with your apps' }[os];
+    var hint = bm && computer ? 'It’s on your ' + barName + ': next time, click CC Dashboard at the top of your browser.'
+      : installed ? 'It’s already on this computer: ' + find + '.'
+      : 'Already on this computer? To find it, ' + find + '.';
+    $('open-hint').textContent = hint;
+    $('open-hint').hidden = !hint;
+    $('bar-link').textContent = bm ? 'Not on your bar? Put it there again' : 'Put it on your ' + barName + ' too';
+    show('open');
+  }
+  function fallback() {
+    if (deferred || done) return;
+    wanted = false;
+    if (os === 'ios') show('ios');
+    else openOnly();
+  }
+  function install() {
+    var d = deferred;
+    deferred = null;
+    d.prompt();
+    d.userChoice.then(function (c) {
+      if (c && c.outcome === 'accepted') { done = true; show('done'); }
+      // Cancelled on a computer: the bar steps stay, without the app link (the browser asks once per visit).
+      else if (computer) show(shown() || 'bar');
+      else { dismissed = true; $('again').hidden = false; $('confirm').hidden = true; }
+    });
+  }
+
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferred = e;
+    if (done) return;
+    // Offered after all: not installed (any more) in this browser.
+    installed = false;
+    try { localStorage.removeItem('cc-installed'); localStorage.removeItem('cc-pin-done'); } catch (x) {}
+    // A computer: the bar steps, now with "Add it as an app instead" (or Open, if this page put it on the bar).
+    if (computer) { var now = shown(); show(now === 'open' && !bm ? 'bar' : (now || 'bar')); return; }
+    show('ready'); $('confirm').hidden = false; $('again').hidden = true;
+    if (wanted) { wanted = false; install(); }
+  });
+  window.addEventListener('appinstalled', function () {
+    deferred = null; done = true; installed = true;
+    try { localStorage.setItem('cc-installed', '1'); localStorage.removeItem('cc-pin-done'); } catch (x) {}
+    show('done');
+  });
+
+  $('add').addEventListener('click', function () {
+    if (deferred) { install(); return; }
+    if (dismissed) { $('again').hidden = false; $('confirm').hidden = true; return; }
+    // Clicked before the browser was ready to offer it: it installs the moment it is.
+    wanted = true;
+  });
+  $('app-link').addEventListener('click', function (e) {
+    e.preventDefault();
+    if (safari) { $('bar-link').textContent = 'Put it on your ' + barName + ' instead'; show('safari'); }
+    else if (deferred) install();
+  });
+  $('bar-link').addEventListener('click', function (e) { e.preventDefault(); step(1); say(''); show('bar'); });
+  $('open-big').addEventListener('click', function (e) { if (!ok) return; e.preventDefault(); window.CC.leave(installed || bm ? withApp(DASHBOARD) : DASHBOARD, false); });
+  if (ok) $('open-big').href = DASHBOARD; else $('open-big').removeAttribute('href');
+
+  // ---- The bookmarks bar, step by step: each step ticks as it happens. ----
+  var at = 1, link = $('bm-link'), dragging = false;
+  function step(n) {
+    at = n;
+    for (var i = 1; i <= 3; i++) $('bm-' + i).className = 'bm-step' + (i < n ? ' did' : i === n ? ' now' : '');
+  }
+  function say(text, good) { $('bm-say').textContent = text; $('bm-say').className = 'bm-say' + (good ? ' good' : ''); }
+  // 1. The keys (Ctrl + Shift + B, ⌘ + Shift + B): ticked when pressed here.
+  window.addEventListener('keydown', function (e) {
+    var k = String(e.key || '').toLowerCase();
+    if (shown() !== 'bar' || at > 2 || !(k === 'b' || e.code === 'KeyB') || !e.shiftKey || !(e.ctrlKey || e.metaKey) || e.altKey) return;
+    if (at < 2) step(2);
+    say('');
+  });
+  // The page gets shorter when the bar shows and taller when it hides (the window itself staying the same size).
+  var vh = window.innerHeight, vw = window.innerWidth, oh = window.outerHeight;
+  window.addEventListener('resize', function () {
+    var dh = window.innerHeight - vh, same = window.innerWidth === vw && window.outerHeight === oh;
+    vh = window.innerHeight; vw = window.innerWidth; oh = window.outerHeight;
+    if (shown() !== 'bar' || !same || Math.abs(dh) < 10 || Math.abs(dh) > 80 || at > 2) return;
+    if (dh < 0) { if (at < 2) step(2); say(''); }
+    else { step(1); say('That hid the bar. Press ' + mod + ' + Shift + B once more.'); }
+  });
+  // 2. The drag. Letting go on the bar is the browser's to take; the page itself takes nothing, so letting go on it
+  // does nothing (rather than opening the link here).
+  link.addEventListener('dragstart', function () {
+    dragging = true; html.className += ' dragging';
+    if (at < 2) step(2);
+    say('');
+  });
+  link.addEventListener('dragend', function (e) {
+    dragging = false; html.className = html.className.replace(/\s*\bdragging\b/g, '');
+    var fx = (e.dataTransfer && e.dataTransfer.dropEffect) || 'none';
+    if (fx !== 'none') {
+      step(3);
+      say('It’s on your ' + barName + '. Now click it.', true);
+      bm = true;
+      try { localStorage.setItem('cc-bm', '1'); } catch (x) {}
+    } else say('Not on the bar yet. Drag the button up again and let go right on the bar.');
+  });
+  var refuse = function (e) { if (!dragging) return; e.preventDefault(); if (e.dataTransfer) e.dataTransfer.dropEffect = 'none'; };
+  document.addEventListener('dragenter', refuse);
+  document.addEventListener('dragover', refuse);
+  document.addEventListener('drop', function (e) { if (dragging) e.preventDefault(); });
+  // Clicked rather than dragged: say how, and give it a little shake.
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    say('Drag it, don’t click it: hold the mouse button down on it, move up to the bar, then let go.');
+    link.className = 'bm-btn';
+    void link.offsetWidth;
+    link.className = 'bm-btn nudge';
+  });
+
+  // A computer: the bookmarks bar first (unless it's one click away already), the app a click away when the browser
+  // offers it. Phones: the home screen. Chrome and Edge offer the app within a moment, unless it's installed already.
+  if (computer) {
+    if ((installed && chromium) || bm) openOnly(); else show('bar');
+  }
+  else if (os === 'ios' || firefox) fallback();
+  else if (installed && chromium) openOnly();
+  else setTimeout(fallback, 2500);
+
+})();
+</script>
+</body>
+</html>
